@@ -193,5 +193,41 @@ list("abc")  # ['a','b','c']
 
 ❌ Invalid:
 int("abc")  # ValueError
+```
+
+## 📌7. Variable Reassignment
+```python
+
+x = 10
+x = x + 5
+print(x)  # 15
+
+Note: Python replaces the reference, not modifies old value
+```
+## 📌8. Variable Memory Behavior (Important Concept)
+```python
+a = 10
+b = a
+
+print(id(a))
+print(id(b))
+
+Note:Both point to same object.
+
+
+Immutable Example (int, str, tuple)
+
+a = 10
+b = a
+a = 20
+print(b)  # still 10
+
+Mutable Example (list)
+
+a = [1,2]
+b = a
+
+a.append(3)
+print(b)  # [1,2,3]
 
 ```
