@@ -598,6 +598,33 @@ print(joined)
 # The string before .join() is the separator. Here it's "", so no extra characters are added.
 
 ```
+## 📌31. ASCII / Unicode
+```python
+
+# ord() and chr() are built-in functions in Python.
+
+# ord(character) -> gives the Unicode code point (integer) of the character.
+print(ord("A"))   # 65
+# Explanation:
+# "A" is a character.
+# ord("A") returns 65 because in ASCII/Unicode, 'A' corresponds to code point 65.
+
+# chr(number) -> gives the character for the given Unicode code point.
+print(chr(65))    # 'A'
+# Explanation:
+# 65 is an integer code point.
+# chr(65) returns 'A' because 65 maps to 'A' in Unicode.
+
+# Works for other characters too:
+print(ord("a"))   # 97
+print(chr(97))    # 'a'
+
+# Unicode example:
+print(ord("₹"))   # 8377 (Indian Rupee symbol)
+print(chr(8377))  # '₹'
+
+
+```
 
 
 
