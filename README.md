@@ -518,6 +518,86 @@ s.split(",")   # ['a', 'b', 'c']
 "-".join(["a", "b", "c"])
 
 ```
+## 📌27. Checking Content (Very Important)
+```python
+
+s = "Python123"
+
+s.isalpha()     # False
+# Checks if ALL characters are letters (A-Z or a-z).
+# "Python123" has numbers, so result is False.
+
+s.isdigit()     # False
+# Checks if ALL characters are digits (0-9).
+# "Python123" has letters, so result is False.
+
+s.isalnum()     # True
+# Checks if ALL characters are letters OR digits (no spaces or symbols).
+# "Python123" has letters and digits only, so True.
+
+s.islower()     # False
+# Checks if ALL letters are lowercase.
+# "Python123" has uppercase 'P', so False.
+
+s.isupper()     # False
+# Checks if ALL letters are uppercase.
+# "Python123" has lowercase letters, so False.
+
+s.isspace()     # False
+# Checks if ALL characters are whitespace (spaces, tabs, newlines).
+# "Python123" has no spaces, so False.
+
+s.startswith("Py")  # True
+# Checks if the string starts with "Py".
+# "Python123" starts with "Py", so True.
+
+s.endswith("on")    # False
+# Checks if the string ends with "on".
+# "Python123" ends with "123", so False.
+
+```
+## 📌28. String Formatting (VERY IMPORTANT)
+```python
+name = "Monu"
+age = 26
+
+print(f"My name is {name} and age is {age}")
+```
+
+## 📌29. Iterating Over String
+```python
+s = "python"
+
+for ch in s:
+  print(ch)
+
+=> With index:
+
+for i in range(len(s)):
+    print(i, s[i])
+
+```
+## 📌30. String to List & List to String
+```python
+
+=> String to List
+
+s = "abc"
+lst = list(s)
+print(lst)  
+# Output: ['a', 'b', 'c']
+# Explanation: list() takes each character from the string and makes a list of characters.
+
+=> List to String
+
+chars = ['a', 'b', 'c']
+joined = "".join(chars)
+print(joined)  
+# Output: 'abc'
+# Explanation: join() combines all items in the list into one string.
+# The string before .join() is the separator. Here it's "", so no extra characters are added.
+
+```
 
 
 
