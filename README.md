@@ -622,8 +622,22 @@ print(chr(97))    # 'a'
 # Unicode example:
 print(ord("₹"))   # 8377 (Indian Rupee symbol)
 print(chr(8377))  # '₹'
+```
 
+## 📌31. String Memory Behavior
+```python
 
+a = "hello"
+b = "hello"
+
+print(id(a) == id(b))  # True
+
+# Explanation:
+# id() gives the memory address (identity) of an object.
+# In Python, small strings and some immutable objects are "interned".
+# Interning means Python stores one copy of the same string to save memory.
+# So both a and b point to the SAME string object in memory.
+# Therefore, id(a) == id(b) is True.
 ```
 
 
