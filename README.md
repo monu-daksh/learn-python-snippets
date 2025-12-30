@@ -173,7 +173,7 @@ Note: int → float (safe conversion)
 ```
 ## 📌6. Explicit Type Conversion (Type Casting)
 ```python
-You convert manually.
+=> You convert manually.
 
 x = "100"
 
@@ -182,7 +182,7 @@ z = float(x)
 
 print(y, z)
 
-Common Casting:-
+=> Common Casting:-
 
 int("10")
 float("3.5")
@@ -215,14 +215,14 @@ print(id(b))
 Note:Both point to same object.
 
 
-Immutable Example (int, str, tuple)
+=> Immutable Example (int, str, tuple)
 
 a = 10
 b = a
 a = 20
 print(b)  # still 10
 
-Mutable Example (list)
+=> Mutable Example (list)
 
 a = [1,2]
 b = a
