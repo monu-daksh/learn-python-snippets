@@ -56,3 +56,42 @@ snake_case = "recommended"
 camelCase = "allowed but not preferred"
 UPPER_CASE = "constant"
 ```
+## 📌3. Types of Variables (Based on Scope)
+```python
+
+🔹 Local Variable
+Declared inside a function.
+
+def test():
+    x = 10  # local variable, which is available inside function!
+    print(x)
+
+test()
+print(x)  # Error: Not available outside of function
+
+
+🔹 Global Variable
+Declared outside functions.
+
+x = 10
+
+def show():
+    print(f"available inside function", x)
+    
+show()
+print(f"available outside function", x)
+
+
+🔹 Global Keyword
+Modify global variable inside function.
+
+count = 10
+
+def increment():
+    global count
+    count+=1
+    
+increment()
+print(count)  # global variable is updated!
+
+```
