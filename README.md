@@ -288,7 +288,7 @@ bool(None)   # False
 bool(1)      # True
 bool("a")    # True
 ```
-## 📌13. Boolean Nature of Variables
+## 📌13. Variable Shadowing
 ```python
 x = 10
 
