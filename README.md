@@ -11,14 +11,20 @@ If you are a beginner and want a **Python cheatsheet** or **ready-to-use example
 
 ---
 
-## 📌 Example: Loops in Python
+## 📌1. Variables in Python (Data Holders)
 ```python
-# For loop example
-for i in range(5):
-    print(i)
+=> How to Write Variables
 
-# While loop example
-n = 5
-while n > 0:
-    print(n)
-    n -= 1
+name = "John"
+age = 25
+is_active = True
+
+print(name, age, is_active)
+
+=> Multiple Assignment
+a, b, c = 10, 20, 30
+
+print(a, b, c)
+
+
+```
