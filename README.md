@@ -349,6 +349,62 @@ s = "hello"
 s = "H" + s[1:]
 print(s)  # Hello
 ```
+## 📌18. String Indexing
+```python
+
+=> Positive Index
+
+s = "python"
+print(s[0])  # at index 0 => p
+print(s[3])  #  at index 3 => h
+
+Negative Index
+print(s[-1])  # n
+print(s[-2])  # o
+
+=> How Indexes works in python/javascript
+
+s = "python"
+Indexes:  p   y   t   h   o   n
+Positive: 0   1   2   3   4   5
+Negative:-6  -5  -4  -3  -2  -1
+```
+## 📌19. String Slicing
+```python
+
+s = "Python"
+s[start : end : step]
+
+# - start: where to begin (inclusive)
+# - end:   where to stop (exclusive) — it stops just BEFORE this index
+# - step:  how to move (default is 1). Use negative step to go backwards.
+
+
+s = "Python"
+
+print(s[0:4])     # 'Pyth'
+# From index 0 (P) up to index 4 (not included) -> P(0), y(1), t(2), h(3)
+
+print(s[:4])      # 'Pyth'
+# Start is omitted -> defaults to 0
+# So it’s the same as s[0:4]
+
+print(s[2:])      # 'thon'
+# End is omitted -> goes till the end
+# Starts at index 2 (t) -> t(2), h(3), o(4), n(5)
+
+print(s[::2])     # 'Pto'
+# Full slice but step=2 -> take every 2nd character from start
+# Picks: P(0), t(2), o(4)
+
+print(s[::-1])    # 'nohtyP'
+# step=-1 -> go backwards (reverse the string)
+# Starts at the end and moves left: n, o, h, t, y, P
+
+
+```
+
+
 
 
 
