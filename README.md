@@ -108,3 +108,50 @@ def outer():
 outer()
 
 ```
+## 📌4. Variable Types (Data Types)
+```python
+Python is dynamically typed.
+
+x = 10        # int
+x = "hello"  # now string
+
+
+Common Types:
+
+
+# int -> Whole number (no decimal)
+x_int = 10        # Example: 10
+
+# float -> Number with decimal point
+x_float = 10.5    # Example: 10.5
+
+# str -> Text or sequence of characters
+x_str = "hello"   # Example: "hello"
+
+# bool -> True or False (used for conditions)
+x_bool_true = True    # Example: True
+x_bool_false = False  # Example: False
+
+# list -> Ordered collection, can change (mutable)
+# Ordered means items keep the same sequence you added them.
+# You can access by index: x_list[0] -> 1
+x_list = [1, 2, 3]    # Example: [1, 2, 3]
+
+# tuple -> Ordered collection, cannot change (immutable)
+# Ordered like list, but you cannot modify after creation.
+x_tuple = (1, 2)      # Example: (1, 2)
+
+# dict -> Key-value pairs (like a map)
+# Conceptually unordered (you access by key, not position).
+# In Python 3.7+, insertion order is preserved internally, but still use keys.
+x_dict = {"a": 1}     # Example: {"a": 1}
+
+# set -> Unordered collection of unique items
+# Unordered means no fixed position; cannot access by index.
+# Items may appear in any order when printed.
+x_set = {1, 2}        # Example: {1, 2}
+
+# NoneType -> Represents "nothing" or "no value"
+x_none = None         # Example: None
+
+```
