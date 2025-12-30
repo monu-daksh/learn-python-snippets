@@ -238,6 +238,45 @@ print(b)  # [1,2,3]
 PI = 3.14
 MAX_LIMIT = 100
 
-
+Note: ⚠️ Convention only — still changeable.
 
 ```
+## 📌10. Deleting Variables
+```python
+
+x = 10
+del x
+
+print(x)  # You'll get Error
+```
+## 📌10. None Variable
+```python
+=> Represents absence of value.
+x = None
+
+if x is None:
+    print("No value")
+
+```
+## 📌10. Variable Unpacking
+```python
+a, b = (10, 20)
+
+print(a, b)
+
+
+=> Using *
+
+a, *b = [1,2,3,4]
+print(a)  # 1
+print(b)  # [2,3,4]
+```
+## 📌11. Input Variables
+```python
+name = input("Enter name: ")
+age = int(input("Enter age: "))
+
+Note:⚠ input() always returns string
+```
+
+
