@@ -171,3 +171,27 @@ print(type(c))  #<class 'float'>
 Note: int → float (safe conversion)
 
 ```
+## 📌6. Explicit Type Conversion (Type Casting)
+```python
+You convert manually.
+
+x = "100"
+
+y = int(x)
+z = float(x)
+
+print(y, z)
+
+Common Casting:-
+
+int("10")
+float("3.5")
+str(100)
+bool(1)
+list("abc")  # ['a','b','c']
+
+
+❌ Invalid:
+int("abc")  # ValueError
+
+```
