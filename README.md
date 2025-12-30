@@ -118,7 +118,6 @@ x = "hello"  # now string
 
 Common Types:
 
-
 # int -> Whole number (no decimal)
 x_int = 10        # Example: 10
 
@@ -154,4 +153,7 @@ x_set = {1, 2}        # Example: {1, 2}
 # NoneType -> Represents "nothing" or "no value"
 x_none = None         # Example: None
 
+Check type:
+
+type(x)
 ```
