@@ -333,6 +333,22 @@ Note:
 ✔ Triple quotes support multiline strings
 
 ```
+## 📌17. String is Immutable (CRITICAL CONCEPT)
+```python
+
+s = "hello"
+s[0] = "H"
+
+print(s) # Error
+
+Note:
+✔ You cannot modify a string
+✔ You must create a new string
+
+s = "hello"
+s = "H" + s[1:]
+print(s)  # Hello
+```
 
 
 
