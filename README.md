@@ -317,6 +317,199 @@ if "x" in globals():
 else:
     print("Not exists")
 ```
+## 📌16. Strings in Python (VERY IMPORTANT)
+```python
+=> Creating Strings
+
+s1 = 'Hello'
+s2 = "Hello"
+s3 = '''Hello
+World'''
+s4 = """Multi
+Line"""
+
+Note:
+✔ All are valid
+✔ Triple quotes support multiline strings
+
+```
+## 📌17. String is Immutable (CRITICAL CONCEPT)
+```python
+
+s = "hello"
+s[0] = "H"
+
+print(s) # Error
+
+Note:
+✔ You cannot modify a string
+✔ You must create a new string
+
+s = "hello"
+s = "H" + s[1:]
+print(s)  # Hello
+```
+## 📌18. String Indexing
+```python
+
+=> Positive Index
+
+s = "python"
+print(s[0])  # at index 0 => p
+print(s[3])  #  at index 3 => h
+
+Negative Index
+print(s[-1])  # n
+print(s[-2])  # o
+
+=> How Indexes works in python/javascript
+
+s = "python"
+Indexes:  p   y   t   h   o   n
+Positive: 0   1   2   3   4   5
+Negative:-6  -5  -4  -3  -2  -1
+```
+## 📌19. String Slicing
+```python
+
+s = "Python"
+s[start : end : step]
+
+# - start: where to begin (inclusive)
+# - end:   where to stop (exclusive) — it stops just BEFORE this index
+# - step:  how to move (default is 1). Use negative step to go backwards.
+
+
+s = "Python"
+
+print(s[0:4])     # 'Pyth'
+# From index 0 (P) up to index 4 (not included) -> P(0), y(1), t(2), h(3)
+
+print(s[:4])      # 'Pyth'
+# Start is omitted -> defaults to 0
+# So it’s the same as s[0:4]
+
+print(s[2:])      # 'thon'
+# End is omitted -> goes till the end
+# Starts at index 2 (t) -> t(2), h(3), o(4), n(5)
+
+print(s[::2])     # 'Pto'
+# Full slice but step=2 -> take every 2nd character from start
+# Picks: P(0), t(2), o(4)
+
+print(s[::-1])    # 'nohtyP'
+# step=-1 -> go backwards (reverse the string)
+# Starts at the end and moves left: n, o, h, t, y, P
+
+```
+
+## 📌20. Length of String
+```python
+s = "python
+len(s)  # 6
+
+```
+## 📌21. String Concatenation
+```python
+a = "Hello"
+b = "World"
+
+print(a + " " + b)
+
+=> Using *
+print("Hi " * 3)
+```
+## 📌22. String Membership
+```python
+"Py" in "Python"      # True
+"x" not in "Python"   # True
+
+=> String Comparison
+
+"a" < "b"      # True
+"apple" > "app"
+
+Note: Based on ASCII / Unicode values
+```
+
+## 📌23. Case Conversion
+```python
+
+s = "PyThOn"
+
+s.lower()      # 'python'
+# Converts ALL letters to lowercase.
+# PyThOn -> python
+
+s.upper()      # 'PYTHON'
+# Converts ALL letters to uppercase.
+# PyThOn -> PYTHON
+
+s.title()      # 'Python'
+# Makes the first letter uppercase and the rest lowercase.
+# PyThOn -> Python
+
+s.capitalize() # 'Python'
+# Capitalizes ONLY the first character and makes the rest lowercase.
+# PyThOn -> Python
+
+s.swapcase()   # 'pYtHoN'
+# Swaps the case of each letter.
+# Uppercase becomes lowercase, lowercase becomes uppercase.
+# PyThOn -> pYtHoN
+
+```
+## 📌24. Whitespace Handling
+```python
+
+# There are spaces before and after the word "hello"
+s = "  hello  "
+
+
+s = "  hello  "   # There are spaces before and after the word "hello"
+
+s.strip()      # "hello"
+# Removes spaces from BOTH ends (left and right).
+# So "  hello  " becomes "hello".
+
+s.lstrip()     # "hello  "
+# Removes spaces ONLY from the LEFT side.
+# So "  hello  " becomes "hello  " (right spaces remain).
+
+s.rstrip()     # "  hello"
+# Removes spaces ONLY from the RIGHT side.
+# So "  hello  " becomes "  hello" (left spaces remain).
+
+```
+## 📌25. Finding & Searching
+```python
+s = "hello world"
+
+# find() -> Finds the FIRST occurrence of the substring.
+# Returns the index (0-based). If NOT found, returns -1.
+
+# NOTE: It is CASE-SENSITIVE.
+print(s.find("o"))   # 4  (first 'o' at index 4)
+print(s.find("O"))   # -1 (uppercase 'O' not found)
+
+# rfind() -> Finds the LAST occurrence of the substring.
+# Returns the index. If NOT found, returns -1.
+
+# Also CASE-SENSITIVE.
+print(s.rfind("o"))  # 7  (last 'o' at index 7)
+print(s.rfind("O"))  # -1 (not found)
+
+# index() -> Same as find(), but if NOT found, raises ValueError.
+# CASE-SENSITIVE.
+print(s.index("o"))  # 4
+# print(s.index("O")) #  ValueError: substring not found
+
+# count() -> Counts HOW MANY times the substring appears.
+# Returns 0 if NOT found. CASE-SENSITIVE.
+print(s.count("o"))  # 2
+print(s.count("O"))  # 0
+```
+
 
 
 
