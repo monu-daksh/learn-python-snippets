@@ -229,5 +229,15 @@ b = a
 
 a.append(3)
 print(b)  # [1,2,3]
+```
+
+## 📌9. Constants (By Convention)
+```python
+=> Python has no true constants.
+
+PI = 3.14
+MAX_LIMIT = 100
+
+
 
 ```
