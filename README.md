@@ -409,6 +409,28 @@ s = "python
 len(s)  # 6
 
 ```
+## 📌21. String Concatenation
+```python
+a = "Hello"
+b = "World"
+
+print(a + " " + b)
+
+=> Using *
+print("Hi " * 3)
+```
+## 📌22. String Membership
+```python
+"Py" in "Python"      # True
+"x" not in "Python"   # True
+
+=> String Comparison
+
+"a" < "b"      # True
+"apple" > "app"
+
+Note: Based on ASCII / Unicode values
+```
 
 
 
