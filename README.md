@@ -509,6 +509,15 @@ print(s.index("o"))  # 4
 print(s.count("o"))  # 2
 print(s.count("O"))  # 0
 ```
+## 📌26. Splitting & Joining
+```python
+
+s = "a,b,c"
+s.split(",")   # ['a', 'b', 'c']
+
+"-".join(["a", "b", "c"])
+
+```
 
 
 
