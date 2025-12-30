@@ -432,6 +432,56 @@ print("Hi " * 3)
 Note: Based on ASCII / Unicode values
 ```
 
+## 📌23. Case Conversion
+```python
+
+s = "PyThOn"
+
+s.lower()      # 'python'
+# Converts ALL letters to lowercase.
+# PyThOn -> python
+
+s.upper()      # 'PYTHON'
+# Converts ALL letters to uppercase.
+# PyThOn -> PYTHON
+
+s.title()      # 'Python'
+# Makes the first letter uppercase and the rest lowercase.
+# PyThOn -> Python
+
+s.capitalize() # 'Python'
+# Capitalizes ONLY the first character and makes the rest lowercase.
+# PyThOn -> Python
+
+s.swapcase()   # 'pYtHoN'
+# Swaps the case of each letter.
+# Uppercase becomes lowercase, lowercase becomes uppercase.
+# PyThOn -> pYtHoN
+
+```
+## 📌24. Whitespace Handling
+```python
+
+# There are spaces before and after the word "hello"
+s = "  hello  "
+
+
+s = "  hello  "   # There are spaces before and after the word "hello"
+
+s.strip()      # "hello"
+# Removes spaces from BOTH ends (left and right).
+# So "  hello  " becomes "hello".
+
+s.lstrip()     # "hello  "
+# Removes spaces ONLY from the LEFT side.
+# So "  hello  " becomes "hello  " (right spaces remain).
+
+s.rstrip()     # "  hello"
+# Removes spaces ONLY from the RIGHT side.
+# So "  hello  " becomes "  hello" (left spaces remain).
+
+```
+
 
 
 
