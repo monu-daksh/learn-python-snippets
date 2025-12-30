@@ -401,9 +401,14 @@ print(s[::-1])    # 'nohtyP'
 # step=-1 -> go backwards (reverse the string)
 # Starts at the end and moves left: n, o, h, t, y, P
 
-
 ```
 
+## 📌20. Length of String
+```python
+s = "python
+len(s)  # 6
+
+```
 
 
 
