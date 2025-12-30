@@ -317,6 +317,22 @@ if "x" in globals():
 else:
     print("Not exists")
 ```
+## 📌16. Strings in Python (VERY IMPORTANT)
+```python
+=> Creating Strings
+
+s1 = 'Hello'
+s2 = "Hello"
+s3 = '''Hello
+World'''
+s4 = """Multi
+Line"""
+
+Note:
+✔ All are valid
+✔ Triple quotes support multiline strings
+
+```
 
 
 
