@@ -34,3 +34,25 @@ print(y)
 print(z)
 
 ```
+## 📌2. Variable Naming Rules
+```python
+✅ Allowed:
+
+user_name = "Monu"
+_age = 26
+totalAmount = 500
+
+
+❌ Not Allowed:
+
+1name = "Monu"   # cannot start with number
+user-name = "x"  # hyphen not allowed
+class = 10       # reserved keyword
+
+
+Best Practices (Pythonic)
+
+snake_case = "recommended"
+camelCase = "allowed but not preferred"
+UPPER_CASE = "constant"
+```
