@@ -94,4 +94,17 @@ def increment():
 increment()
 print(count)  # global variable is updated!
 
+
+🔹 Nonlocal Variable (Nested Functions)
+
+def outer():
+    x = 10            # x is created inside outer
+    def inner():
+        nonlocal x    # use the x from outer (not a new one)
+        x += 5        # increase that x by 5
+    inner()           # run inner, so x becomes 15
+    print(x)          # print 15
+
+outer()
+
 ```
