@@ -11,14 +11,87 @@ If you are a beginner and want a **Python cheatsheet** or **ready-to-use example
 
 ---
 
-## 📌 Example: Loops in Python
+## 📌1. Variables in Python (Data Holders)
 ```python
-# For loop example
-for i in range(5):
-    print(i)
+=> How to Write Variables
 
-# While loop example
-n = 5
-while n > 0:
-    print(n)
-    n -= 1
+name = "John"
+age = 25
+is_active = True
+
+print(name, age, is_active)
+
+=> Multiple Assignment
+
+a, b, c = 10, 20, 30
+print(a, b, c)
+
+=> Same Value to Multiple Variables
+
+x = y = z = 100
+print(x)
+print(y)
+print(z)
+
+```
+## 📌2. Variable Naming Rules
+```python
+✅ Allowed:
+
+user_name = "Monu"
+_age = 26
+totalAmount = 500
+
+
+❌ Not Allowed:
+
+1name = "Monu"   # cannot start with number
+user-name = "x"  # hyphen not allowed
+class = 10       # reserved keyword
+
+
+Best Practices (Pythonic)
+
+snake_case = "recommended"
+camelCase = "allowed but not preferred"
+UPPER_CASE = "constant"
+```
+## 📌3. Types of Variables (Based on Scope)
+```python
+
+🔹 Local Variable
+Declared inside a function.
+
+def test():
+    x = 10  # local variable, which is available inside function!
+    print(x)
+
+test()
+print(x)  # Error: Not available outside of function
+
+
+🔹 Global Variable
+Declared outside functions.
+
+x = 10
+
+def show():
+    print(f"available inside function", x)
+    
+show()
+print(f"available outside function", x)
+
+
+🔹 Global Keyword
+Modify global variable inside function.
+
+count = 10
+
+def increment():
+    global count
+    count+=1
+    
+increment()
+print(count)  # global variable is updated!
+
+```
