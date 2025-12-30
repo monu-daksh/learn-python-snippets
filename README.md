@@ -624,7 +624,7 @@ print(ord("₹"))   # 8377 (Indian Rupee symbol)
 print(chr(8377))  # '₹'
 ```
 
-## 📌31. String Memory Behavior
+## 📌32. String Memory Behavior
 ```python
 
 a = "hello"
@@ -638,6 +638,39 @@ print(id(a) == id(b))  # True
 # Interning means Python stores one copy of the same string to save memory.
 # So both a and b point to the SAME string object in memory.
 # Therefore, id(a) == id(b) is True.
+```
+## 📌33. Common String Problems (Logic)
+```python
+
+# 1) Reverse a string
+s = "Python"
+print(s[::-1])       # 'nohtyP'
+# Explanation:
+# s[start:end:step]
+# step = -1 means "go backwards", so this reverses the whole string.
+
+# 2) Remove spaces from a string
+s = "p y t h o n"
+print(s.replace(" ", ""))   # 'python'
+# Explanation:
+# replace(" ", "") removes all SPACE characters.
+# Note: It removes only plain spaces, not tabs or newlines.
+
+# If you want to remove ALL kinds of whitespace (space, tab, newline), use:
+t = "p\t y\n t  h o n"
+print("".join(t.split()))   # 'python'
+# Explanation:
+# split() with no separator splits on ANY whitespace and removes them.
+# join() with "" glues the parts back together without spaces.
+
+# 3) Check if a substring exists (case-insensitive)
+s = "Hello PyThoN World"
+if "py" in s.lower():
+    print("Found 'py'")   # Found 'py'
+# Explanation:
+# s.lower() makes the string lowercase, so case doesn’t matter.
+# "py" in ... checks if "py" exists anywhere in the string.
+
 ```
 
 
