@@ -22,9 +22,15 @@ is_active = True
 print(name, age, is_active)
 
 => Multiple Assignment
-a, b, c = 10, 20, 30
 
+a, b, c = 10, 20, 30
 print(a, b, c)
 
+=> Same Value to Multiple Variables
+
+x = y = z = 100
+print(x)
+print(y)
+print(z)
 
 ```
