@@ -481,6 +481,34 @@ s.rstrip()     # "  hello"
 # So "  hello  " becomes "  hello" (left spaces remain).
 
 ```
+## 📌25. Finding & Searching
+```python
+s = "hello world"
+
+# find() -> Finds the FIRST occurrence of the substring.
+# Returns the index (0-based). If NOT found, returns -1.
+
+# NOTE: It is CASE-SENSITIVE.
+print(s.find("o"))   # 4  (first 'o' at index 4)
+print(s.find("O"))   # -1 (uppercase 'O' not found)
+
+# rfind() -> Finds the LAST occurrence of the substring.
+# Returns the index. If NOT found, returns -1.
+
+# Also CASE-SENSITIVE.
+print(s.rfind("o"))  # 7  (last 'o' at index 7)
+print(s.rfind("O"))  # -1 (not found)
+
+# index() -> Same as find(), but if NOT found, raises ValueError.
+# CASE-SENSITIVE.
+print(s.index("o"))  # 4
+# print(s.index("O")) #  ValueError: substring not found
+
+# count() -> Counts HOW MANY times the substring appears.
+# Returns 0 if NOT found. CASE-SENSITIVE.
+print(s.count("o"))  # 2
+print(s.count("O"))  # 0
+```
 
 
 
