@@ -157,3 +157,17 @@ Check type:
 
 type(x)
 ```
+## 📌5. Implicit Type Conversion (Automatic)
+```python
+Python converts types automatically.
+
+a = 10      # int
+b = 2.5     # float
+c = a + b   # float
+
+print(c)    # 12.5
+print(type(c))  #<class 'float'>
+
+Note: int → float (safe conversion)
+
+```
