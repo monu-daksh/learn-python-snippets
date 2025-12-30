@@ -278,5 +278,45 @@ age = int(input("Enter age: "))
 
 Note:⚠ input() always returns string
 ```
+## 📌12. Boolean Nature of Variables
+```python
+bool(0)      # False
+bool("")     # False
+bool([])     # False
+bool(None)   # False
+
+bool(1)      # True
+bool("a")    # True
+```
+## 📌13. Boolean Nature of Variables
+```python
+x = 10
+
+def test():
+    # This inner x hides (or covers) the outer x when you are inside the function.
+    # when you do print(x) inside test(), Python uses the inner x (5), not the global one (10).
+    x = 5  # shadows global x
+    print(x)
+
+test()
+print(x)
+```
+## 📌14. Dynamic Nature of Python Variables
+```python
+x = 10
+x = "Python"
+x = [1,2,3]
+
+Note: No type declaration required.
+```
+## 📌15. Checking Variable Existence
+```python
+
+if "x" in globals():
+    print("x exists")
+else:
+    print("Not exists")
+```
+
 
 
