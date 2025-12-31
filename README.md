@@ -518,6 +518,180 @@ s.split(",")   # ['a', 'b', 'c']
 "-".join(["a", "b", "c"])
 
 ```
+## 📌27. Checking Content (Very Important)
+```python
+
+s = "Python123"
+
+s.isalpha()     # False
+# Checks if ALL characters are letters (A-Z or a-z).
+# "Python123" has numbers, so result is False.
+
+s.isdigit()     # False
+# Checks if ALL characters are digits (0-9).
+# "Python123" has letters, so result is False.
+
+s.isalnum()     # True
+# Checks if ALL characters are letters OR digits (no spaces or symbols).
+# "Python123" has letters and digits only, so True.
+
+s.islower()     # False
+# Checks if ALL letters are lowercase.
+# "Python123" has uppercase 'P', so False.
+
+s.isupper()     # False
+# Checks if ALL letters are uppercase.
+# "Python123" has lowercase letters, so False.
+
+s.isspace()     # False
+# Checks if ALL characters are whitespace (spaces, tabs, newlines).
+# "Python123" has no spaces, so False.
+
+s.startswith("Py")  # True
+# Checks if the string starts with "Py".
+# "Python123" starts with "Py", so True.
+
+s.endswith("on")    # False
+# Checks if the string ends with "on".
+# "Python123" ends with "123", so False.
+
+```
+## 📌28. String Formatting (VERY IMPORTANT)
+```python
+name = "Monu"
+age = 26
+
+print(f"My name is {name} and age is {age}")
+```
+
+## 📌29. Iterating Over String
+```python
+s = "python"
+
+for ch in s:
+  print(ch)
+
+=> With index:
+
+for i in range(len(s)):
+    print(i, s[i])
+
+```
+## 📌30. String to List & List to String
+```python
+
+=> String to List
+
+s = "abc"
+lst = list(s)
+print(lst)  
+# Output: ['a', 'b', 'c']
+# Explanation: list() takes each character from the string and makes a list of characters.
+
+=> List to String
+
+chars = ['a', 'b', 'c']
+joined = "".join(chars)
+print(joined)  
+# Output: 'abc'
+# Explanation: join() combines all items in the list into one string.
+# The string before .join() is the separator. Here it's "", so no extra characters are added.
+
+```
+## 📌31. ASCII / Unicode
+```python
+
+# ord() and chr() are built-in functions in Python.
+
+# ord(character) -> gives the Unicode code point (integer) of the character.
+print(ord("A"))   # 65
+# Explanation:
+# "A" is a character.
+# ord("A") returns 65 because in ASCII/Unicode, 'A' corresponds to code point 65.
+
+# chr(number) -> gives the character for the given Unicode code point.
+print(chr(65))    # 'A'
+# Explanation:
+# 65 is an integer code point.
+# chr(65) returns 'A' because 65 maps to 'A' in Unicode.
+
+# Works for other characters too:
+print(ord("a"))   # 97
+print(chr(97))    # 'a'
+
+# Unicode example:
+print(ord("₹"))   # 8377 (Indian Rupee symbol)
+print(chr(8377))  # '₹'
+```
+
+## 📌32. String Memory Behavior
+```python
+
+a = "hello"
+b = "hello"
+
+print(id(a) == id(b))  # True
+
+# Explanation:
+# id() gives the memory address (identity) of an object.
+# In Python, small strings and some immutable objects are "interned".
+# Interning means Python stores one copy of the same string to save memory.
+# So both a and b point to the SAME string object in memory.
+# Therefore, id(a) == id(b) is True.
+```
+## 📌33. Common String Problems (Logic)
+```python
+
+# 1) Reverse a string
+s = "Python"
+print(s[::-1])       # 'nohtyP'
+# Explanation:
+# s[start:end:step]
+# step = -1 means "go backwards", so this reverses the whole string.
+
+# 2) Remove spaces from a string
+s = "p y t h o n"
+print(s.replace(" ", ""))   # 'python'
+# Explanation:
+# replace(" ", "") removes all SPACE characters.
+# Note: It removes only plain spaces, not tabs or newlines.
+
+# If you want to remove ALL kinds of whitespace (space, tab, newline), use:
+t = "p\t y\n t  h o n"
+print("".join(t.split()))   # 'python'
+# Explanation:
+# split() with no separator splits on ANY whitespace and removes them.
+# join() with "" glues the parts back together without spaces.
+
+# 3) Check if a substring exists (case-insensitive)
+s = "Hello PyThoN World"
+if "py" in s.lower():
+    print("Found 'py'")   # Found 'py'
+# Explanation:
+# s.lower() makes the string lowercase, so case doesn’t matter.
+# "py" in ... checks if "py" exists anywhere in the string.
+
+```
+
+## 📌34. Performance Tip
+```python
+❌ Bad:
+
+s = ""
+for i in range(1000):
+    s += str(i)
+
+✅ Good:
+parts = []
+for i in range(1000):
+    parts.append(str(i))
+
+s = "".join(parts)
+```
+## 📌35. Performance Tip
+```python
+
+```
 
 
 
