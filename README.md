@@ -836,7 +836,294 @@ print(4 <= 4)      # True
 print(4 <= 3)      # False
 
 ```
+## 📌38. Comparison Operators (Boolean Output)
+```python
+#1:--> Basic number comparisons
 
+# Equal to (==): checks if values are the same
+print(5 == 5)      # True
+print(5 == 7)      # False
+
+# Not equal (!=): checks if values are different
+print(5 != 7)      # True
+print(5 != 5)      # False
+
+# Greater than (>): left side is bigger than right side?
+print(10 > 3)      # True
+print(3 > 10)      # False
+
+# Less than (<): left side is smaller than right side?
+print(3 < 10)      # True
+print(10 < 3)      # False
+
+# Greater than or equal to (>=): bigger OR equal
+print(5 >= 5)      # True
+print(5 >= 6)      # False
+
+# Less than or equal to (<=): smaller OR equal
+print(4 <= 4)      # True
+print(4 <= 3)      # False
+
+
+# 2:--> Comparisons with variables
+
+
+x = 10
+y = 7
+
+print(x > y)       # True, because 10 is greater than 7
+print(x == y)      # False, because 10 is not equal to 7
+print((x - y) >= 3)  # True, because 10 - 7 = 3, and 3 >= 3
+
+
+# 3:-> String comparisons (lexicographic order)
+# Python compares the Unicode (ASCII for English letters) value of each character
+
+print("Apple" == "Apple")   # True
+# Both strings are exactly the same.
+# Same characters, same order, same case → values match completely.
+
+
+print("Apple" == "apple")   # False
+# 'A' (uppercase) and 'a' (lowercase) have different Unicode values.
+# Case matters in string comparison, so they are NOT equal.
+
+
+print("abc" < "abd")        # True
+# Comparison happens character by character:
+# 'a' == 'a' → move to next
+# 'b' == 'b' → move to next
+# 'c' < 'd' → True, so entire string comparison becomes True
+
+
+print("Banana" > "Apple")   # True
+# First characters are compared:
+# 'B' vs 'A'
+# Unicode value of 'B' is greater than 'A'
+# So "Banana" is considered greater than "Apple"
+
+
+print("a" > "Z")            # True
+# Unicode value of lowercase letters is greater than uppercase letters
+# 'Z' → Unicode 90
+# 'a' → Unicode 97
+# Since 97 > 90, 'a' is greater than 'Z'
+
+
+# 4:->  Comparing lengths or mixed expressions
+
+name = "Monu"
+print(len(name) > 3)    # True (length is 4)
+
+a = 5
+b = 2
+print(a * b == 10)      # True (because 5 * 2 = 10)
+
+
+# 5:-> Comparisons with lists and tuples
+# Lists and tuples are compared element-by-element (left to right)
+
+print([1, 2, 3] == [1, 2, 3])   # True
+# Both lists have the same elements
+# Same values, same order → lists are equal
+
+print([1, 2, 3] == [1, 2, 4])   # False
+# Comparison starts from index 0:
+# 1 == 1 → OK
+# 2 == 2 → OK
+# 3 != 4 → mismatch found → result is False
+
+print([1, 2, 3] == [3, 2, 1])   # False
+# Order matters in lists
+# Even though values are same, positions are different
+# Python checks exact sequence, not just values
+
+# Tuples follow the same comparison rules as lists
+print((1, 2) < (1, 3))          # True
+# Step-by-step comparison:
+# First element: 1 == 1 → move to next
+# Second element: 2 < 3 → True
+# So entire tuple comparison becomes True
+
+Note: Python compares lists and tuples from left to right, one element at a time, and stops at the first difference.
+
+# 6:-> Boolean results and usage in if statements
+# Boolean values (True / False)
+
+age = 18
+
+is_adult = age >= 18     # Comparison operator returns a Boolean (True or False)
+# age >= 18 → True because 18 is equal to 18
+
+print(is_adult)         # True
+
+Note: Every comparison in Python results in a Boolean and Boolean values are: True and False.
+
+# Using Boolean in if statement
+
+if is_adult:
+    print("You are an adult.")
+else:
+    print("You are a minor.")
+
+
+# Direct condition inside if
+
+age = 16
+
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+
+# if - elif - else (Multiple conditions)
+
+marks = 72
+
+if marks >= 90:
+    print("Grade A")
+elif marks >= 75:
+    print("Grade B")
+elif marks >= 60:
+    print("Grade C")
+else:
+    print("Fail")
+
+# 7:-> Chaining comparisons (Python feature)
+
+age = 25
+
+print(18 <= age <= 60)   # True
+# Python checks this as:
+# 18 <= age AND age <= 60
+# Both conditions are True → final result is True
+
+
+# Invalid vs valid age check
+age = 15
+
+print(0 <= age <= 120)   # True
+# Checks:
+# 0 <= age → True
+# age <= 120 → True
+# Age lies within valid human range
+
+
+# Marks between two values
+marks = 72
+
+if 60 <= marks < 75:
+    print("Grade C")
+# First: 60 <= marks → True
+# Second: marks < 75 → True
+# Both True → condition passes
+
+
+# Decimal values comparison
+temperature = 36.5
+
+print(36.0 <= temperature <= 37.5)   # True
+# Works same for float values
+# Checks if temperature lies in healthy range
+
+
+# Chaining with variables (step-by-step logic)
+a = 5
+b = 10
+c = 15
+
+print(a < b < c)   # True
+# Python evaluates:
+# a < b → True
+# b < c → True
+# All comparisons must be True
+
+
+# Chaining with equality and comparison
+x = 10
+
+print(5 < x == 10)   # True
+# Evaluated as:
+# 5 < x AND x == 10
+# Both conditions are True
+
+# Chaining with strings (lexicographical order)
+print("apple" < "banana" < "carrot")   # True
+# String comparison happens alphabetically
+# "apple" < "banana" and "banana" < "carrot"
+
+# Chaining with characters (Unicode values)
+print("A" < "M" < "Z")   # True
+# Characters are compared using Unicode values
+
+
+# What Python DOES NOT do (Important Interview Point)
+x = 5
+
+print(x > 3 > 1)   # True
+# Evaluated as:
+# x > 3 AND 3 > 1
+# NOT as: (x > 3) > 1
+
+
+# Comparing with None (special value meaning “no value”)
+
+value = None
+# None represents the absence of a value (nothing / no data)
+
+# Use 'is' to compare with None (BEST PRACTICE)
+print(value is None)       # True
+# 'is' checks identity (same object in memory)
+# value points to the single None object → True
+
+print(value is not None)   # False
+# value IS None, so it is NOT "not None" → False
+
+
+print(None == 0)      # False
+# None is not equal to 0
+# 0 means numeric zero, None means "no value"
+# They represent completely different concepts
+
+print(None == "")     # False
+# Empty string "" still has a value (length 0)
+# None means no value at all → not equal
+
+print(None == [])     # False
+# Empty list [] is still a list object
+# None is not a container → not equal
+
+# Equality vs Identity (== vs is) — simple demo
+
+# '==' checks VALUE equality
+# It compares the contents of objects (what is inside)
+
+# 'is' checks IDENTITY
+# It checks whether both variables point to the SAME object in memory
+
+a = [1, 2, 3]   # A new list object is created in memory
+b = [1, 2, 3]   # Another new list object is created (different from 'a')
+c = a           # 'c' does NOT create a new list
+                # It points to the SAME list object as 'a'
+
+print(a == b)   # True
+# Both lists contain the same elements in the same order
+# Value comparison → contents are equal
+
+print(a is b)   # False
+# 'a' and 'b' are two different list objects in memory
+# Even though values are same, memory locations are different
+
+print(a is c)   # True
+# 'c' and 'a' refer to the SAME object
+# Both names point to the same memory location
+
+
+Note: Simple Mental Model (Very Important)
+== → “Do they look the same?”
+is → “Are they the same thing?”
+
+```
 
 
 
