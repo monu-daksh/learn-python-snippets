@@ -1259,6 +1259,144 @@ for i in range(3):
 
 Note: Python supports for and while loops, with control statements like break, continue, and else to manage loop execution.
 ```
+## 📌40. Python Lists (Array Equivalent)
+```python
+A list is:
+
+=> Ordered
+=> Mutable (can change)
+=> Can store mixed data types
+=> Most used data structure in Python
+
+# Creating a list
+numbers = [1, 2, 3, 4]
+# A list of integers
+
+mixed = [1, "Python", True, 3.5]
+# List can store different data types
+
+# Accessing elements (Indexing)
+fruits = ["apple", "banana", "mango"]
+
+print(fruits[0])    # apple
+# Index starts from 0
+
+print(fruits[-1])   # mango
+# Negative index starts from end
+
+
+# Slicing (Get part of list)
+
+nums = [10, 20, 30, 40, 50]
+
+print(nums[1:4])   # [20, 30, 40]
+# Starts from index 1
+# Ends before index 4
+
+# Modifying list values (Mutable nature)
+
+nums = [1, 2, 3]
+
+nums[1] = 20
+print(nums)
+# Lists are mutable → values can be changed
+
+# Adding elements (IMPORTANT METHODS)
+ => # append() → Add at end
+
+nums = [1, 2, 3]
+
+nums.append(4)
+# Adds element at the end
+
+=> # insert() → Add at specific position
+nums.insert(1, 99)
+# Inserts 99 at index 1
+
+=> # extend() → Add multiple elements
+nums.extend([5, 6])
+# Adds elements from another list
+
+# Removing elements
+=> # remove() → Remove by value
+nums = [1, 2, 3, 2]
+
+nums.remove(2)
+# Removes first occurrence of 2
+
+=> # pop() → Remove by index
+nums.pop(1)
+# Removes element at index 1
+
+=> # clear() → Remove all items
+nums.clear()
+# List becomes empty
+
+
+# Finding elements
+=> # index() → Get index of value
+nums = [10, 20, 30]
+
+print(nums.index(20))
+# Returns index of 20
+
+=> # count() → Count occurrences
+nums = [1, 2, 2, 3]
+
+print(nums.count(2))
+# Counts how many times 2 appears
+
+# Sorting and reversing
+=> # sort() → Sort list
+nums = [3, 1, 4, 2]
+
+nums.sort()
+# Sorts list in ascending order
+
+=> # reverse() → Reverse list
+nums.reverse()
+# Reverses element order
+
+# Copying lists
+
+a = [1, 2, 3]      # Create a list 'a'
+ 
+b = a              # 'b' points to the SAME list as 'a' (reference copy)
+# Now both 'a' and 'b' refer to the same object in memory
+
+c = a.copy()       # 'c' is a NEW list with the same elements (actual copy - shallow copy)
+# 'c' refers to a different list object
+
+b.append(4)        # Append 4 to the list THROUGH 'b'
+# Since 'b' and 'a' are the same list, this change affects 'a' too
+
+print(a)  # [1, 2, 3, 4]  -> 'a' shows the change
+print(c)  # [1, 2, 3]     -> 'c' is unchanged because it's a separate copy
+
+# Membership check
+fruits = ["apple", "banana"]
+
+print("apple" in fruits)
+# Checks if element exists in list
+
+# Length of list
+nums = [1, 2, 3]
+
+print(len(nums))
+# Number of elements in list
+
+# Nested lists (2D list)
+matrix = [
+    [1, 2],
+    [3, 4]
+]
+
+print(matrix[1][0])  # 3
+
+
+
+
+```
 
 
 
