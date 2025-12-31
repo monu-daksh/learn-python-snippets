@@ -1519,6 +1519,136 @@ print("red" in colors)
 # Checks if value exists
 
 ```
+## 📌42. Python Set (Unique Values)
+```python
+A set is:
+
+=> Unordered
+=> Stores unique values only
+=> Mutable (but elements must be immutable)
+=> Very fast for lookup
+
+# Creating a set
+nums = {1, 2, 3}
+# Set with unique values
+
+nums2 = {1, 2, 2, 3}
+print(nums2)
+# Duplicate values are automatically removed
+
+empty_set = set()
+# Correct way to create empty set
+
+
+# Important property (Unordered)
+colors = {"red", "green", "blue"}
+print(colors)
+# Order is NOT guaranteed
+
+Note: Never rely on position or indexing in sets.
+
+# Adding elements
+=> # add() → Add single element
+
+nums = {1, 2}
+
+nums.add(3)
+# Adds 3 to set
+
+
+=> # update() → Add multiple elemen
+nums.update([4, 5])
+# Adds multiple elements
+
+# Removing elements
+=> # remove() → Remove element (Error if not found)
+nums.remove(2)
+# Removes 2
+
+
+=> # discard() → Safe remove (No error)
+nums.discard(10)
+# Does nothing if element not found
+
+=> # pop() → Remove random element
+nums.pop()
+# Removes an arbitrary element
+
+# clear() → Remove all elements
+nums.clear()
+# Set becomes empty
+
+
+# Membership check (FAST)
+nums = {1, 2, 3}
+
+print(2 in nums)
+# Very fast lookup
+
+Note: Use sets for existence checking.
+
+# Set operations (VERY IMPORTANT)
+=> # Union → Combine sets
+
+a = {1, 2}
+b = {2, 3}
+
+print(a | b)
+# All unique elements from both sets
+
+=> # Intersection → Common elements
+print(a & b)
+# Elements present in both sets
+
+=> # Difference → Only in first set
+print(a - b)
+# Elements in a but not in b
+
+=> # Symmetric Difference → In either but not both
+print(a ^ b)
+# Elements that are not common
+
+
+# Built-in set methods
+
+=> # len() → Size of set
+print(len(a))
+# Number of elements
+
+=> # copy() → Shallow copy
+c = a.copy()
+# Creates a new set
+
+=> # isdisjoint() → No common elements
+x = {1, 2}
+y = {3, 4}
+
+print(x.isdisjoint(y))
+# True if no common values
+
+=> # issubset() → Check subset
+small = {1, 2}
+big = {1, 2, 3}
+
+print(small.issubset(big))
+
+=> # issuperset() → Check superset
+print(big.issuperset(small))
+
+
+# Looping through set
+fruits = {"apple", "banana"}
+
+for fruit in fruits:
+    print(fruit)
+    # Order may change each run
+
+# Frozen set (Immutable set)
+fs = frozenset([1, 2, 3])
+# Immutable version of set
+
+Note: Use when set should not change.
+```
 
 
 
