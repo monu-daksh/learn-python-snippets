@@ -673,6 +673,26 @@ if "py" in s.lower():
 
 ```
 
+## 📌34. Performance Tip
+```python
+❌ Bad:
+
+s = ""
+for i in range(1000):
+    s += str(i)
+
+✅ Good:
+parts = []
+for i in range(1000):
+    parts.append(str(i))
+
+s = "".join(parts)
+```
+## 📌35. Performance Tip
+```python
+
+```
+
 
 
 
