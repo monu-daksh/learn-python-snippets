@@ -697,8 +697,116 @@ min()
 sorted()
 
 sorted("python")  # ['h','n','o','p','t','y']
+```
+## 📌35. Arithmetic Operators
+```python
+=> Addition (+)
+
+a = 10
+b = 5
+print(a + b)
 
 
+=> Subtraction (-)
+
+a = 10
+b = 5
+print(a - b)
+
+=> Multiplication (*)
+
+a = 10
+b = 5
+print(a * b)
+
+=> Division (/)
+
+a = 10
+b = 5
+print(a / b)
+
+=> Floor Division (//)
+
+a = 10
+b = 3
+
+print(a // b)   # 3
+# Explanation:
+# 10 ÷ 3 = 3.333...
+# Floor division removes the decimal part and rounds DOWN → 3
+
+=> Modulus (%)
+
+print(10 % 3)  # Output: 1
+
+# The % operator gives the remainder after division
+# Here: 10 divided by 3 leaves a remainder 1
+
+
+print(7 % 2)    # 1  -> 7 = 2*3 + 1 (odd numbers give remainder 1 when % 2)
+print(8 % 2)    # 0  -> 8 = 2*4 + 0 (even numbers give remainder 0 when % 2)
+print(14 % 5)   # 4  -> 14 = 5*2 + 4
+print(3 % 10)   # 3  -> When the first number is smaller, remainder is the first number
+
+=> Power (**)
+
+a = 2
+b = 4
+print(a ** b)  # 16
+
+=> Assignment Operators
+
+x = 10
+print(x)
+
+=> += (add and assign)
+
+x = 10            # start with 10
+x += 5            # add 5 to x
+# Equivalent: x = x + 5
+print(x)          # 15
+
+=> -= (subtract and assign)
+
+x = 10            # start with 10
+x -= 3            # subtract 3 from x
+# Equivalent: x = x - 3
+print(x)          # 7
+
+=> *= (multiply and assign)
+
+x = 4             # start with 4
+x *= 3            # multiply x by 3
+# Equivalent: x = x * 3
+print(x)          # 12
+
+=> /= (divide and assign — true division, result is float)
+
+x = 10            # start with 10
+x /= 2            # divide x by 2
+# Equivalent: x = x / 2
+print(x)          # 5.0  (note: division makes it a float)
+
+=> //= (floor divide and assign — integer-like division)
+
+x = 10            # start with 10
+x //= 3           # floor divide (drops the decimal part)
+# Equivalent: x = x // 3
+print(x)          # 3     (because 10 / 3 is 3.333..., floor is 3)
+
+=> %= (modulus and assign — remainder)
+
+x = 10            # start with 10
+x %= 4            # store the remainder of x divided by 4
+# Equivalent: x = x % 4
+print(x)          # 2     (since 10 = 4*2 + 2, remainder is 2)
+
+=> **= (power and assign — exponent)
+
+x = 2             # start with 2
+x **= 3           # raise x to the power of 3
+# Equivalent: x = x ** 3
+print(x)          # 8     (2^3 = 8)
 ```
 
 
