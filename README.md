@@ -1125,5 +1125,140 @@ is → “Are they the same thing?”
 
 ```
 
+## 📌39. Loops in Python (Complete Guide)
+```python
+# 1:---> for loop (Most used loop)
+# Example 1: Loop through a list
+
+fruits = ["apple", "banana", "mango"]
+
+for fruit in fruits:
+    print(fruit)
+    # Python takes one item at a time from the list
+    # 'fruit' gets the current item
+
+# Example 2: Using range()
+
+for i in range(5):
+    print(i)
+    # range(5) gives numbers from 0 to 4
+    # loop runs 5 times
+
+
+# Example 3: Start, stop, step
+for i in range(2, 10, 2):
+    print(i)
+    # Starts from 2
+    # Stops before 10
+    # Jumps by 2 each time
+
+# Example 4: Loop through string
+name = "Python"
+
+for char in name:
+    print(char)
+    # Each character is processed one by one
+
+# Example 5: Loop through dictionary
+student = {"name": "Monu", "age": 22}
+
+for key in student:
+    print(key, student[key])
+    # 'key' gets dictionary keys
+    # student[key] gives the value
+
+# 2:---> while loop (Condition-based loop)
+# Example 1: Basic while loop
+
+count = 1
+
+while count <= 5:
+    print(count)
+    count += 1
+    # Loop runs while condition is True
+    # count increases each time
+
+
+# Example 2: Infinite loop (with break)
+
+i = 1
+
+while True:
+    print(i)
+    if i == 3:
+        break
+    i += 1
+    # break stops the loop
+
+# break (Stop the loop)
+for i in range(10):
+    if i == 5:
+        break
+    print(i)
+    # Loop stops completely when i == 5
+
+
+# continue (Skip current iteration)
+for i in range(5):
+    if i == 2:
+        continue
+    print(i)
+    # Skips printing when i == 2
+
+# else with loops
+for i in range(3):
+    print(i)
+else:
+    print("Loop finished normally")
+    # else runs only if loop did NOT break
+
+# while-else
+i = 0
+
+while i < 3:
+    print(i)
+    i += 1
+else:
+    print("While loop ended")
+
+
+# Nested loops (Loop inside loop)
+for i in range(3):
+    for j in range(2):
+        print(i, j)
+        # Inner loop runs fully for each outer loop iteration
+
+# Looping with enumerate()
+fruits = ["apple", "banana", "mango"]
+
+for index, fruit in enumerate(fruits):
+    print(index, fruit)
+    # enumerate gives index + value together
+
+# Looping with zip()
+
+names = ["A", "B", "C"]
+scores = [90, 85, 88]
+
+for name, score in zip(names, scores):
+    print(name, score)
+    # zip combines multiple lists element-wise
+
+
+# List Comprehension (Short loop)
+squares = [i*i for i in range(5)]
+print(squares)
+# Compact form of for loop
+# Creates a new list
+
+# pass in loops
+for i in range(3):
+    pass
+    # pass does nothing
+    # Used as placeholder
+
+Note: Python supports for and while loops, with control statements like break, continue, and else to manage loop execution.
+```
+
 
 
