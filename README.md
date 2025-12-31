@@ -698,7 +698,7 @@ sorted()
 
 sorted("python")  # ['h','n','o','p','t','y']
 ```
-## 📌35. Arithmetic Operators
+## 📌36. Arithmetic Operators
 ```python
 => Addition (+)
 
@@ -807,6 +807,34 @@ x = 2             # start with 2
 x **= 3           # raise x to the power of 3
 # Equivalent: x = x ** 3
 print(x)          # 8     (2^3 = 8)
+```
+## 📌37. Comparison Operators (Boolean Output)
+```python
+
+# Equal to (==): checks if values are the same
+print(5 == 5)      # True
+print(5 == 7)      # False
+
+# Not equal (!=): checks if values are different
+print(5 != 7)      # True
+print(5 != 5)      # False
+
+# Greater than (>): left side is bigger than right side?
+print(10 > 3)      # True
+print(3 > 10)      # False
+
+# Less than (<): left side is smaller than right side?
+print(3 < 10)      # True
+print(10 < 3)      # False
+
+# Greater than or equal to (>=): bigger OR equal
+print(5 >= 5)      # True
+print(5 >= 6)      # False
+
+# Less than or equal to (<=): smaller OR equal
+print(4 <= 4)      # True
+print(4 <= 3)      # False
+
 ```
 
 
