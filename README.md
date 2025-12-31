@@ -1392,9 +1392,131 @@ matrix = [
 ]
 
 print(matrix[1][0])  # 3
+```
+## 📌41. Tuple (Immutable List)
+```python
+A tuple is:
+
+=> Ordered
+=> Immutable (cannot be changed after creation)
+=> Faster than lists
+=> Safer for fixed data
+
+# Creating a tuple
+t1 = (1, 2, 3)
+# Tuple with multiple values
+
+t2 = 1, 2, 3
+# Parentheses are optional
+
+t3 = (5,)
+# Single-element tuple (comma is REQUIRED)
+
+Note: Use tuple when data should not change.
+
+# Accessing elements (Indexing)
+colors = ("red", "green", "blue")
+
+print(colors[0])    # red
+# Index starts from 0
+
+print(colors[-1])   # blue
+# Negative index starts from end
+
+# Slicing tuple
+nums = (10, 20, 30, 40, 50)
+
+print(nums[1:4])   # (20, 30, 40)
+# Returns a new tuple
 
 
+# Immutability (IMPORTANT)
+nums = (1, 2, 3)
 
+# nums[0] = 10   Error
+# Tuples cannot be modified
+Note: This is why tuples are safe and hashable.
+
+# Tuple methods (ONLY 2 METHODS)
+# count() → Count occurrences
+
+nums = (1, 2, 2, 3)
+
+print(nums.count(2))  
+# Counts how many times 2 appears
+
+# index() → Find index of value
+nums = (10, 20, 30)
+
+print(nums.index(20))  
+# Returns index of 20
+
+# Built-in functions used with tuples
+# len() → Number of elements
+
+t = (1, 2, 3)
+
+print(len(t))
+# Total elements in tuple
+
+# max() → Largest value
+max() → Largest value
+
+# min() → Smallest value
+print(min(nums))
+# Returns lowest value
+
+# sum() → Sum of elements
+print(sum(nums))
+# Adds all values together
+
+
+# sorted() → Sort tuple (returns list)
+nums = (3, 1, 2)
+
+print(sorted(nums))
+# Returns a LIST, not tuple
+
+
+# Looping through tuple
+fruits = ("apple", "banana", "mango")
+
+for fruit in fruits:
+    print(fruit)
+    # Reads values one by one
+
+# Tuple unpacking (VERY IMPORTANT)
+person = ("Monu", 25)
+
+name, age = person
+# Values unpacked into variables
+
+print(name)
+print(age)
+
+# Swapping variables (Python trick)
+a = 10
+b = 20
+
+a, b = b, a
+
+# Uses tuple packing & unpacking
+a = 10
+b = 20
+
+a, b = b, a
+# Uses tuple packing & unpacking
+
+# Nested tuples
+data = ((1, 2), (3, 4))
+
+print(data[1][0])  # 3
+
+# Membership check
+colors = ("red", "green")
+
+print("red" in colors)
+# Checks if value exists
 
 ```
 
