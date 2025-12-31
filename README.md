@@ -688,8 +688,16 @@ for i in range(1000):
 
 s = "".join(parts)
 ```
-## 📌35. Performance Tip
+## 📌35. String Functions (Built-in)
 ```python
+
+len()
+max()
+min()
+sorted()
+
+sorted("python")  # ['h','n','o','p','t','y']
+
 
 ```
 
