@@ -1649,6 +1649,150 @@ fs = frozenset([1, 2, 3])
 
 Note: Use when set should not change.
 ```
+## 📌43. Dictionary (Object Equivalent)
+```python
+# Creating a dictionary
+student = {
+    "name": "Monu",
+    "age": 22,
+    "course": "Python"
+}
+# Keys are strings, values can be anything
+Note: Use dictionary when data has meaningful keys
 
+# Accessing values
+print(student["name"])
+# Access value using key
+Note: Error if key not found
+
+# Using get() (SAFE way)
+print(student.get("age"))
+print(student.get("salary"))
+print(student.get("salary", 0))
+Note: Use get() to avoid errors
+
+# Adding / Updating values
+student["age"] = 23
+student["city"] = "Delhi"
+# Updates existing key
+# Adds new key if not present
+
+
+# Removing items
+=> # pop() → remove by key
+student.pop("city")
+# Removes key and returns its value
+
+=> # popitem() → remove last inserted item
+student.popitem()
+# Removes last key-value pair
+
+=> # del
+del student["age"]
+# Deletes specific key
+
+=> # clear()
+student.clear()
+# Removes all items
+
+
+# Dictionary views (VERY IMPORTANT)
+
+data = {"a": 1, "b": 2, "c": 3}
+
+=> # keys()
+print(data.keys())
+
+=> # values()
+print(data.values())
+
+=> # items()
+print(data.items())
+
+# Looping through dictionary
+=> # Loop keys
+for key in data:
+    print(key)
+
+=> # Loop values
+for value in data.values():
+    print(value)
+
+=> # Loop key & value (MOST USED)
+for key, value in data.items():
+    print(key, "=>", value)
+
+# Checking existence
+print("a" in data)
+print("z" not in data)
+
+# update() → merge dictionaries
+a = {"x": 1}
+b = {"y": 2, "x": 5}
+
+a.update(b)
+print(a)
+
+Note: Existing keys get overwritten
+
+# setdefault() (INTERVIEW FAVORITE)
+user = {"name": "Monu"}
+
+user.setdefault("age", 25)
+user.setdefault("name", "Amit")
+
+print(user)
+Note: Adds key only if it doesn’t exist
+
+# Copying dictionary (IMPORTANT)
+a = {"x": 1}
+b = a          # Reference copy
+c = a.copy()   # Actual copy
+
+b["x"] = 10
+
+print(a)
+print(c)
+
+# Nested dictionary
+users = {
+    "user1": {"name": "Monu", "age": 22},
+    "user2": {"name": "Amit", "age": 25}
+}
+
+print(users["user1"]["name"])
+
+# Dictionary comprehension
+squares = {x: x*x for x in range(5)}
+print(squares)
+
+# Built-in functions with dictionary
+=> # len()
+print(len(data))
+
+=> # str()
+print(str(data))
+
+=> # type()
+print(type(data))
+
+# Keys rules (IMPORTANT)
+d = {
+    1: "int",
+    "a": "string",
+    (1, 2): "tuple"
+}
+# Keys must be IMMUTABLE
+
+❌ Not allowed:
+# {[1,2]: "list"}  ❌
+
+
+
+
+
+
+
+```
 
 
