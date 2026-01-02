@@ -1787,12 +1787,177 @@ d = {
 ❌ Not allowed:
 # {[1,2]: "list"}  ❌
 
+```
+## 📌44. Functions (Reusable Logic)
+```python
+# Basic function (no input, no output)
+def greet():
+    print("Hello, welcome!")
+    # Function body runs when function is called
+
+greet()
 
 
+# Function with parameters (input)
+def greet(name):
+    print("Hello", name)
+    # 'name' is a parameter
+
+greet("Monu")
 
 
+# Function with return value
+def add(a, b):
+    return a + b
+    # return sends result back to caller
+
+result = add(10, 5)
+print(result)
+Note: Use return when you need output.
+
+# Function with multiple returns
+def calculate(a, b):
+    return a + b, a - b
+    # Returns a tuple
+
+sum_val, diff_val = calculate(10, 5)
+print(sum_val, diff_val)
 
 
+# Default parameter values
+def greet(name="Guest"):
+    print("Hello", name)
+    # Default value used if argument not passed
+
+greet()
+greet("Monu")
+
+
+# Keyword arguments
+def profile(name, age):
+    print(name, age)
+
+profile(age=22, name="Monu")
+# Order does not matter
+
+# Positional vs Keyword arguments
+def info(name, city):
+    print(name, city)
+
+info("Monu", "Delhi")       # Positional
+info(city="Delhi", name="Monu")  # Keyword
+
+
+# Variable-length arguments
+=> # *args → multiple positional arguments
+
+def total(*numbers):
+    return sum(numbers)
+    # numbers is a tuple
+
+print(total(1, 2, 3, 4))
+
+
+=> # **kwargs → multiple keyword arguments
+def details(**info):
+    print(info)
+    # info is a dictionary
+
+details(name="Monu", age=22)
+
+
+# Function inside function (Nested)
+def outer():
+    def inner():
+        print("Inner function")
+    inner()
+
+outer()
+
+# Scope of variables (LEGB Rule)
+x = 10   # Global
+
+def test():
+    x = 5  # Local
+    print(x)
+
+test()
+print(x)
+
+
+# global keyword
+
+
+count = 0  # This is a global (module-level) variable
+
+def increase():
+    # Tell Python we want to use the global 'count', not create a local one
+    global count
+    count += 1  # Modify the global variable
+
+increase()        # Call the function, it increases 'count' by 1
+print(count)      # Output: 1
+
+
+# nonlocal keyword
+def outer():
+    x = 10              # 'x' lives in the outer() function's scope
+
+    def inner():
+        nonlocal x      # Tell Python: use the 'x' from outer(), not a new local one
+        x += 5          # Modify that 'x' by adding 5
+
+    inner()             # Call inner(), which increases x from 10 to 15
+    print(x)            # Prints the updated value of x -> 15
+
+outer()                  # Output: 15
+
+# Lambda function (Anonymous)
+add = lambda a, b: a + b
+print(add(3, 4))
+
+
+# Docstrings (Documentation)
+def add(a, b):
+    """Returns sum of two numbers"""
+    return a + b
+
+print(add.__doc__)
+
+
+# Recursion (Function calling itself)
+def factorial(n):
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))
+
+# Higher-order functions
+def square(x):
+    return x * x
+
+nums = [1, 2, 3]
+
+result = list(map(square, nums))
+print(result)
+
+# Function as argument
+def apply(func, value):
+    return func(value)
+
+print(apply(abs, -10))
+
+
+# Return vs Print (INTERVIEW
+def show():
+    print(10)
+
+def give():
+    return 10
+
+print(show())   # None
+print(give())   # 10
 ```
 
 
