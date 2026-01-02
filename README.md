@@ -1392,11 +1392,407 @@ matrix = [
 ]
 
 print(matrix[1][0])  # 3
+```
+## 📌41. Tuple (Immutable List)
+```python
+A tuple is:
+
+=> Ordered
+=> Immutable (cannot be changed after creation)
+=> Faster than lists
+=> Safer for fixed data
+
+# Creating a tuple
+t1 = (1, 2, 3)
+# Tuple with multiple values
+
+t2 = 1, 2, 3
+# Parentheses are optional
+
+t3 = (5,)
+# Single-element tuple (comma is REQUIRED)
+
+Note: Use tuple when data should not change.
+
+# Accessing elements (Indexing)
+colors = ("red", "green", "blue")
+
+print(colors[0])    # red
+# Index starts from 0
+
+print(colors[-1])   # blue
+# Negative index starts from end
+
+# Slicing tuple
+nums = (10, 20, 30, 40, 50)
+
+print(nums[1:4])   # (20, 30, 40)
+# Returns a new tuple
+
+
+# Immutability (IMPORTANT)
+nums = (1, 2, 3)
+
+# nums[0] = 10   Error
+# Tuples cannot be modified
+Note: This is why tuples are safe and hashable.
+
+# Tuple methods (ONLY 2 METHODS)
+# count() → Count occurrences
+
+nums = (1, 2, 2, 3)
+
+print(nums.count(2))  
+# Counts how many times 2 appears
+
+# index() → Find index of value
+nums = (10, 20, 30)
+
+print(nums.index(20))  
+# Returns index of 20
+
+# Built-in functions used with tuples
+# len() → Number of elements
+
+t = (1, 2, 3)
+
+print(len(t))
+# Total elements in tuple
+
+# max() → Largest value
+max() → Largest value
+
+# min() → Smallest value
+print(min(nums))
+# Returns lowest value
+
+# sum() → Sum of elements
+print(sum(nums))
+# Adds all values together
+
+
+# sorted() → Sort tuple (returns list)
+nums = (3, 1, 2)
+
+print(sorted(nums))
+# Returns a LIST, not tuple
+
+
+# Looping through tuple
+fruits = ("apple", "banana", "mango")
+
+for fruit in fruits:
+    print(fruit)
+    # Reads values one by one
+
+# Tuple unpacking (VERY IMPORTANT)
+person = ("Monu", 25)
+
+name, age = person
+# Values unpacked into variables
+
+print(name)
+print(age)
+
+# Swapping variables (Python trick)
+a = 10
+b = 20
+
+a, b = b, a
+
+# Uses tuple packing & unpacking
+a = 10
+b = 20
+
+a, b = b, a
+# Uses tuple packing & unpacking
+
+# Nested tuples
+data = ((1, 2), (3, 4))
+
+print(data[1][0])  # 3
+
+# Membership check
+colors = ("red", "green")
+
+print("red" in colors)
+# Checks if value exists
+
+```
+## 📌42. Python Set (Unique Values)
+```python
+A set is:
+
+=> Unordered
+=> Stores unique values only
+=> Mutable (but elements must be immutable)
+=> Very fast for lookup
+
+# Creating a set
+nums = {1, 2, 3}
+# Set with unique values
+
+nums2 = {1, 2, 2, 3}
+print(nums2)
+# Duplicate values are automatically removed
+
+empty_set = set()
+# Correct way to create empty set
+
+
+# Important property (Unordered)
+colors = {"red", "green", "blue"}
+print(colors)
+# Order is NOT guaranteed
+
+Note: Never rely on position or indexing in sets.
+
+# Adding elements
+=> # add() → Add single element
+
+nums = {1, 2}
+
+nums.add(3)
+# Adds 3 to set
+
+
+=> # update() → Add multiple elemen
+nums.update([4, 5])
+# Adds multiple elements
+
+# Removing elements
+=> # remove() → Remove element (Error if not found)
+nums.remove(2)
+# Removes 2
+
+
+=> # discard() → Safe remove (No error)
+nums.discard(10)
+# Does nothing if element not found
+
+=> # pop() → Remove random element
+nums.pop()
+# Removes an arbitrary element
+
+# clear() → Remove all elements
+nums.clear()
+# Set becomes empty
+
+
+# Membership check (FAST)
+nums = {1, 2, 3}
+
+print(2 in nums)
+# Very fast lookup
+
+Note: Use sets for existence checking.
+
+# Set operations (VERY IMPORTANT)
+=> # Union → Combine sets
+
+a = {1, 2}
+b = {2, 3}
+
+print(a | b)
+# All unique elements from both sets
+
+=> # Intersection → Common elements
+print(a & b)
+# Elements present in both sets
+
+=> # Difference → Only in first set
+print(a - b)
+# Elements in a but not in b
+
+=> # Symmetric Difference → In either but not both
+print(a ^ b)
+# Elements that are not common
+
+
+# Built-in set methods
+
+=> # len() → Size of set
+print(len(a))
+# Number of elements
+
+=> # copy() → Shallow copy
+c = a.copy()
+# Creates a new set
+
+=> # isdisjoint() → No common elements
+x = {1, 2}
+y = {3, 4}
+
+print(x.isdisjoint(y))
+# True if no common values
+
+=> # issubset() → Check subset
+small = {1, 2}
+big = {1, 2, 3}
+
+print(small.issubset(big))
+
+=> # issuperset() → Check superset
+print(big.issuperset(small))
+
+
+# Looping through set
+fruits = {"apple", "banana"}
+
+for fruit in fruits:
+    print(fruit)
+    # Order may change each run
+
+# Frozen set (Immutable set)
+fs = frozenset([1, 2, 3])
+# Immutable version of set
+
+Note: Use when set should not change.
+```
+## 📌43. Dictionary (Object Equivalent)
+```python
+# Creating a dictionary
+student = {
+    "name": "Monu",
+    "age": 22,
+    "course": "Python"
+}
+# Keys are strings, values can be anything
+Note: Use dictionary when data has meaningful keys
+
+# Accessing values
+print(student["name"])
+# Access value using key
+Note: Error if key not found
+
+# Using get() (SAFE way)
+print(student.get("age"))
+print(student.get("salary"))
+print(student.get("salary", 0))
+Note: Use get() to avoid errors
+
+# Adding / Updating values
+student["age"] = 23
+student["city"] = "Delhi"
+# Updates existing key
+# Adds new key if not present
+
+
+# Removing items
+=> # pop() → remove by key
+student.pop("city")
+# Removes key and returns its value
+
+=> # popitem() → remove last inserted item
+student.popitem()
+# Removes last key-value pair
+
+=> # del
+del student["age"]
+# Deletes specific key
+
+=> # clear()
+student.clear()
+# Removes all items
+
+
+# Dictionary views (VERY IMPORTANT)
+
+data = {"a": 1, "b": 2, "c": 3}
+
+=> # keys()
+print(data.keys())
+
+=> # values()
+print(data.values())
+
+=> # items()
+print(data.items())
+
+# Looping through dictionary
+=> # Loop keys
+for key in data:
+    print(key)
+
+=> # Loop values
+for value in data.values():
+    print(value)
+
+=> # Loop key & value (MOST USED)
+for key, value in data.items():
+    print(key, "=>", value)
+
+# Checking existence
+print("a" in data)
+print("z" not in data)
+
+# update() → merge dictionaries
+a = {"x": 1}
+b = {"y": 2, "x": 5}
+
+a.update(b)
+print(a)
+
+Note: Existing keys get overwritten
+
+# setdefault() (INTERVIEW FAVORITE)
+user = {"name": "Monu"}
+
+user.setdefault("age", 25)
+user.setdefault("name", "Amit")
+
+print(user)
+Note: Adds key only if it doesn’t exist
+
+# Copying dictionary (IMPORTANT)
+a = {"x": 1}
+b = a          # Reference copy
+c = a.copy()   # Actual copy
+
+b["x"] = 10
+
+print(a)
+print(c)
+
+# Nested dictionary
+users = {
+    "user1": {"name": "Monu", "age": 22},
+    "user2": {"name": "Amit", "age": 25}
+}
+
+print(users["user1"]["name"])
+
+# Dictionary comprehension
+squares = {x: x*x for x in range(5)}
+print(squares)
+
+# Built-in functions with dictionary
+=> # len()
+print(len(data))
+
+=> # str()
+print(str(data))
+
+=> # type()
+print(type(data))
+
+# Keys rules (IMPORTANT)
+d = {
+    1: "int",
+    "a": "string",
+    (1, 2): "tuple"
+}
+# Keys must be IMMUTABLE
+
+❌ Not allowed:
+# {[1,2]: "list"}  ❌
+
+
+
 
 
 
 
 ```
-
 
 
