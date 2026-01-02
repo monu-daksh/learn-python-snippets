@@ -1959,5 +1959,136 @@ def give():
 print(show())   # None
 print(give())   # 10
 ```
+## 📌45. Python File Handling (Read / Write Files)
+```python
+# Opening a file
+file = open("data.txt", "r")
+# "data.txt" → file name
+# "r" → read mode
+
+
+| Mode | Meaning                 |
+| ---- | ----------------------- |
+| `r`  | Read (file must exist)  |
+| `w`  | Write (overwrites file) |
+| `a`  | Append (adds at end)    |
+| `x`  | Create new file         |
+| `rb` | Read binary             |
+| `wb` | Write binary            |
+
+# Reading file content
+=> # read() → Read full file
+
+file = open("data.txt", "r")
+
+content = file.read()
+print(content)
+# Reads entire file as a single string
+
+file.close()
+
+
+=> # readline() → Read one line
+file = open("data.txt", "r")
+
+line = file.readline()
+print(line)
+# Reads only first line
+
+file.close()
+
+=> # readlines() → Read all lines as list
+file = open("data.txt", "r")
+
+lines = file.readlines()
+print(lines)
+# Each line becomes an element in list
+
+file.close()
+
+
+# Loop through file (BEST PRACTICE)
+file = open("data.txt", "r")
+
+for line in file:
+    print(line.strip())
+    # Reads file line by line
+    # strip() removes newline
+
+file.close()
+
+# Writing to file
+=> # write() → Write text
+file = open("data.txt", "w")
+
+file.write("Hello Python\n")
+file.write("File handling example")
+# Overwrites existing file
+
+file.close()
+
+
+# Appending to file
+file = open("data.txt", "a")
+
+file.write("\nNew line added")
+# Adds data at the end
+
+file.close()
+
+# Using with (RECOMMENDED)
+with open("data.txt", "r") as file:
+    content = file.read()
+    print(content)
+    # File closes automatically
+
+Note: Avoids forgetting close()
+
+# Check file exists
+import os
+
+print(os.path.exists("data.txt"))
+# True if file exists
+
+# File pointer (seek and tell)
+file = open("data.txt", "r")
+
+print(file.tell())
+# Current cursor position
+
+file.seek(0)
+# Move cursor to beginning
+
+file.close()
+
+# Binary file handling
+with open("image.jpg", "rb") as file:
+    data = file.read()
+    # Reads binary data
+
+# Writing list data to file
+lines = ["Python\n", "Java\n", "C++\n"]
+
+with open("languages.txt", "w") as file:
+    file.writelines(lines)
+
+# Reading file safely (Exception handling)
+try:
+    with open("data.txt", "r") as file:
+        print(file.read())
+except FileNotFoundError:
+    print("File not found")
+
+
+# Rename and delete file
+import os
+
+os.rename("old.txt", "new.txt")
+# Renames file
+
+os.remove("new.txt")
+# Deletes file
+
+```
 
 
