@@ -1787,7 +1787,547 @@ d = {
 ❌ Not allowed:
 # {[1,2]: "list"}  ❌
 
+```
+## 📌44. Functions (Reusable Logic)
+```python
+# Basic function (no input, no output)
+def greet():
+    print("Hello, welcome!")
+    # Function body runs when function is called
 
+greet()
+
+
+# Function with parameters (input)
+def greet(name):
+    print("Hello", name)
+    # 'name' is a parameter
+
+greet("Monu")
+
+
+# Function with return value
+def add(a, b):
+    return a + b
+    # return sends result back to caller
+
+result = add(10, 5)
+print(result)
+Note: Use return when you need output.
+
+# Function with multiple returns
+def calculate(a, b):
+    return a + b, a - b
+    # Returns a tuple
+
+sum_val, diff_val = calculate(10, 5)
+print(sum_val, diff_val)
+
+
+# Default parameter values
+def greet(name="Guest"):
+    print("Hello", name)
+    # Default value used if argument not passed
+
+greet()
+greet("Monu")
+
+
+# Keyword arguments
+def profile(name, age):
+    print(name, age)
+
+profile(age=22, name="Monu")
+# Order does not matter
+
+# Positional vs Keyword arguments
+def info(name, city):
+    print(name, city)
+
+info("Monu", "Delhi")       # Positional
+info(city="Delhi", name="Monu")  # Keyword
+
+
+# Variable-length arguments
+=> # *args → multiple positional arguments
+
+def total(*numbers):
+    return sum(numbers)
+    # numbers is a tuple
+
+print(total(1, 2, 3, 4))
+
+
+=> # **kwargs → multiple keyword arguments
+def details(**info):
+    print(info)
+    # info is a dictionary
+
+details(name="Monu", age=22)
+
+
+# Function inside function (Nested)
+def outer():
+    def inner():
+        print("Inner function")
+    inner()
+
+outer()
+
+# Scope of variables (LEGB Rule)
+x = 10   # Global
+
+def test():
+    x = 5  # Local
+    print(x)
+
+test()
+print(x)
+
+
+# global keyword
+
+
+count = 0  # This is a global (module-level) variable
+
+def increase():
+    # Tell Python we want to use the global 'count', not create a local one
+    global count
+    count += 1  # Modify the global variable
+
+increase()        # Call the function, it increases 'count' by 1
+print(count)      # Output: 1
+
+
+# nonlocal keyword
+def outer():
+    x = 10              # 'x' lives in the outer() function's scope
+
+    def inner():
+        nonlocal x      # Tell Python: use the 'x' from outer(), not a new local one
+        x += 5          # Modify that 'x' by adding 5
+
+    inner()             # Call inner(), which increases x from 10 to 15
+    print(x)            # Prints the updated value of x -> 15
+
+outer()                  # Output: 15
+
+# Lambda function (Anonymous)
+add = lambda a, b: a + b
+print(add(3, 4))
+
+
+# Docstrings (Documentation)
+def add(a, b):
+    """Returns sum of two numbers"""
+    return a + b
+
+print(add.__doc__)
+
+
+# Recursion (Function calling itself)
+def factorial(n):
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))
+
+# Higher-order functions
+def square(x):
+    return x * x
+
+nums = [1, 2, 3]
+
+result = list(map(square, nums))
+print(result)
+
+# Function as argument
+def apply(func, value):
+    return func(value)
+
+print(apply(abs, -10))
+
+
+# Return vs Print (INTERVIEW
+def show():
+    print(10)
+
+def give():
+    return 10
+
+print(show())   # None
+print(give())   # 10
+```
+## 📌45. Python File Handling (Read / Write Files)
+```python
+# Opening a file
+file = open("data.txt", "r")
+# "data.txt" → file name
+# "r" → read mode
+
+
+| Mode | Meaning                 |
+| ---- | ----------------------- |
+| `r`  | Read (file must exist)  |
+| `w`  | Write (overwrites file) |
+| `a`  | Append (adds at end)    |
+| `x`  | Create new file         |
+| `rb` | Read binary             |
+| `wb` | Write binary            |
+
+# Reading file content
+=> # read() → Read full file
+
+file = open("data.txt", "r")
+
+content = file.read()
+print(content)
+# Reads entire file as a single string
+
+file.close()
+
+
+=> # readline() → Read one line
+file = open("data.txt", "r")
+
+line = file.readline()
+print(line)
+# Reads only first line
+
+file.close()
+
+=> # readlines() → Read all lines as list
+file = open("data.txt", "r")
+
+lines = file.readlines()
+print(lines)
+# Each line becomes an element in list
+
+file.close()
+
+
+# Loop through file (BEST PRACTICE)
+file = open("data.txt", "r")
+
+for line in file:
+    print(line.strip())
+    # Reads file line by line
+    # strip() removes newline
+
+file.close()
+
+# Writing to file
+=> # write() → Write text
+file = open("data.txt", "w")
+
+file.write("Hello Python\n")
+file.write("File handling example")
+# Overwrites existing file
+
+file.close()
+
+
+# Appending to file
+file = open("data.txt", "a")
+
+file.write("\nNew line added")
+# Adds data at the end
+
+file.close()
+
+# Using with (RECOMMENDED)
+with open("data.txt", "r") as file:
+    content = file.read()
+    print(content)
+    # File closes automatically
+
+Note: Avoids forgetting close()
+
+# Check file exists
+import os
+
+print(os.path.exists("data.txt"))
+# True if file exists
+
+# File pointer (seek and tell)
+file = open("data.txt", "r")
+
+print(file.tell())
+# Current cursor position
+
+file.seek(0)
+# Move cursor to beginning
+
+file.close()
+
+# Binary file handling
+with open("image.jpg", "rb") as file:
+    data = file.read()
+    # Reads binary data
+
+# Writing list data to file
+lines = ["Python\n", "Java\n", "C++\n"]
+
+with open("languages.txt", "w") as file:
+    file.writelines(lines)
+
+# Reading file safely (Exception handling)
+try:
+    with open("data.txt", "r") as file:
+        print(file.read())
+except FileNotFoundError:
+    print("File not found")
+
+
+# Rename and delete file
+import os
+
+os.rename("old.txt", "new.txt")
+# Renames file
+
+os.remove("new.txt")
+# Deletes file
+
+```
+## 📌45. OOPS Concepts (Easy Explanation)
+```python
+# Core OOPS Concepts
+=> Class
+=> Object
+=> Constructor (__init__)
+=> Instance variables
+=> Methods
+=> Encapsulation
+=> Inheritance
+=> Polymorphism
+=> Abstraction
+
+We’ll cover everything step by step 
+
+# Class (Blueprint)
+A class is a blueprint/template for creating objects.
+
+class Person:
+    pass
+# Empty class
+Note: Class defines what an object will have and do
+
+# Object (Real Instance)
+An object is created from a class.
+
+p1 = Person()
+# p1 is an object of Person class
+Note: One class → many objects
+
+# Constructor (__init__)
+Constructor runs automatically when object is created.
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        # self.name is instance variable
+
+        self.age = age
+
+p1 = Person("Monu", 22)
+
+Note: 
+What is self?
+=> self refers to the current object
+=> Used to access variables & methods inside class
+
+# Instance Variables
+Variables that belong to each object.
+
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+p1 = Person("John")
+p2 = Person("Alice")
+
+print(p1.name)  # John
+print(p2.name)  # Alice
+
+Note: Each object has its own copy
+
+# Methods (Functions inside class)
+class Person:
+    def greet(self):
+        print("Hello, my name is", self.name)
+
+p = Person("Monu")
+p.greet()
+Note: Methods define behavior
+
+Complete Simple Example (Very Important)
+
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    def is_pass(self):
+        return self.marks >= 40
+        # Business logic inside class
+
+s1 = Student("Monu", 75)
+
+print(s1.is_pass())   # True
+
+
+# Class Variables (Shared by all objects)
+
+class Student:
+    school = "ABC School"   # Class variable
+
+    def __init__(self, name):
+        self.name = name    # Instance variable
+
+s1 = Student("Monu")
+s2 = Student("Amit")
+
+print(s1.school)
+print(s2.school)
+Note: Class variable is shared
+
+# Encapsulation (Data Protection)
+Encapsulation = hide internal data
+
+Private variable (by convention)
+class Account:
+    def __init__(self, balance):
+        self.__balance = balance
+        # __ makes it private
+
+    def get_balance(self):
+        return self.__balance
+
+acc = Account(5000)
+print(acc.get_balance())
+
+Note: Prevents direct access
+
+# Getter & Setter
+
+class Account:
+    def __init__(self, balance):
+        self.__balance = balance
+
+    def set_balance(self, amount):
+        if amount >= 0:
+            self.__balance = amount
+
+    def get_balance(self):
+        return self.__balance
+
+# Inheritance (Reuse Code)
+Inheritance = one class inherits another class.
+
+class Animal:
+    def sound(self):
+        print("Animal sound")
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
+
+d = Dog()
+d.sound()
+d.bark()
+Note: Dog gets features of Animal
+
+# Method Overriding
+class Animal:
+    def sound(self):
+        print("Animal sound")
+
+class Dog(Animal):
+    def sound(self):
+        print("Dog barks")
+
+d = Dog()
+d.sound()
+Note: Child class overrides parent method
+
+
+# Polymorphism (Many Forms)
+Same method name, different behavior.
+
+class Cat:
+    def sound(self):
+        print("Meow")
+
+class Dog:
+    def sound(self):
+        print("Bark")
+
+animals = [Cat(), Dog()]
+
+for a in animals:
+    a.sound()
+Note: Works because method name is same
+
+
+# super() keyword
+
+Used to call parent class methods.
+class Animal:
+    def __init__(self):
+        print("Animal constructor")
+
+class Dog(Animal):
+    def __init__(self):
+        super().__init__()
+        print("Dog constructor")
+
+Dog()
+
+
+# Abstraction (Hiding Implementation)
+Using abc module.
+
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Square(Shape):
+    def area(self):
+        return 4 * 4
+
+s = Square()
+print(s.area())
+Note: Forces child class to implement methods
+
+# __str__ (Readable Object Output)
+
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return f"Person name is {self.name}"
+
+p = Person("Monu")
+print(p)
+
+# isinstance() (Type check)
+print(isinstance(p, Person))  # True
+
+
+# Object Comparison
+class Point:
+    def __init__(self, x):
+        self.x = x
+
+p1 = Point(5)
+p2 = Point(5)
+
+print(p1 == p2)   # False (different objects)
 
 
 
