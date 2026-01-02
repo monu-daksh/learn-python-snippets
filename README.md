@@ -2090,5 +2090,249 @@ os.remove("new.txt")
 # Deletes file
 
 ```
+## 📌45. OOPS Concepts (Easy Explanation)
+```python
+# Core OOPS Concepts
+=> Class
+=> Object
+=> Constructor (__init__)
+=> Instance variables
+=> Methods
+=> Encapsulation
+=> Inheritance
+=> Polymorphism
+=> Abstraction
+
+We’ll cover everything step by step 
+
+# Class (Blueprint)
+A class is a blueprint/template for creating objects.
+
+class Person:
+    pass
+# Empty class
+Note: Class defines what an object will have and do
+
+# Object (Real Instance)
+An object is created from a class.
+
+p1 = Person()
+# p1 is an object of Person class
+Note: One class → many objects
+
+# Constructor (__init__)
+Constructor runs automatically when object is created.
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        # self.name is instance variable
+
+        self.age = age
+
+p1 = Person("Monu", 22)
+
+Note: 
+What is self?
+=> self refers to the current object
+=> Used to access variables & methods inside class
+
+# Instance Variables
+Variables that belong to each object.
+
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+p1 = Person("John")
+p2 = Person("Alice")
+
+print(p1.name)  # John
+print(p2.name)  # Alice
+
+Note: Each object has its own copy
+
+# Methods (Functions inside class)
+class Person:
+    def greet(self):
+        print("Hello, my name is", self.name)
+
+p = Person("Monu")
+p.greet()
+Note: Methods define behavior
+
+Complete Simple Example (Very Important)
+
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    def is_pass(self):
+        return self.marks >= 40
+        # Business logic inside class
+
+s1 = Student("Monu", 75)
+
+print(s1.is_pass())   # True
+
+
+# Class Variables (Shared by all objects)
+
+class Student:
+    school = "ABC School"   # Class variable
+
+    def __init__(self, name):
+        self.name = name    # Instance variable
+
+s1 = Student("Monu")
+s2 = Student("Amit")
+
+print(s1.school)
+print(s2.school)
+Note: Class variable is shared
+
+# Encapsulation (Data Protection)
+Encapsulation = hide internal data
+
+Private variable (by convention)
+class Account:
+    def __init__(self, balance):
+        self.__balance = balance
+        # __ makes it private
+
+    def get_balance(self):
+        return self.__balance
+
+acc = Account(5000)
+print(acc.get_balance())
+
+Note: Prevents direct access
+
+# Getter & Setter
+
+class Account:
+    def __init__(self, balance):
+        self.__balance = balance
+
+    def set_balance(self, amount):
+        if amount >= 0:
+            self.__balance = amount
+
+    def get_balance(self):
+        return self.__balance
+
+# Inheritance (Reuse Code)
+Inheritance = one class inherits another class.
+
+class Animal:
+    def sound(self):
+        print("Animal sound")
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
+
+d = Dog()
+d.sound()
+d.bark()
+Note: Dog gets features of Animal
+
+# Method Overriding
+class Animal:
+    def sound(self):
+        print("Animal sound")
+
+class Dog(Animal):
+    def sound(self):
+        print("Dog barks")
+
+d = Dog()
+d.sound()
+Note: Child class overrides parent method
+
+
+# Polymorphism (Many Forms)
+Same method name, different behavior.
+
+class Cat:
+    def sound(self):
+        print("Meow")
+
+class Dog:
+    def sound(self):
+        print("Bark")
+
+animals = [Cat(), Dog()]
+
+for a in animals:
+    a.sound()
+Note: Works because method name is same
+
+
+# super() keyword
+
+Used to call parent class methods.
+class Animal:
+    def __init__(self):
+        print("Animal constructor")
+
+class Dog(Animal):
+    def __init__(self):
+        super().__init__()
+        print("Dog constructor")
+
+Dog()
+
+
+# Abstraction (Hiding Implementation)
+Using abc module.
+
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Square(Shape):
+    def area(self):
+        return 4 * 4
+
+s = Square()
+print(s.area())
+Note: Forces child class to implement methods
+
+# __str__ (Readable Object Output)
+
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return f"Person name is {self.name}"
+
+p = Person("Monu")
+print(p)
+
+# isinstance() (Type check)
+print(isinstance(p, Person))  # True
+
+
+# Object Comparison
+class Point:
+    def __init__(self, x):
+        self.x = x
+
+p1 = Point(5)
+p2 = Point(5)
+
+print(p1 == p2)   # False (different objects)
+
+
+
+
+
+```
 
 
