@@ -32,7 +32,6 @@ x = y = z = 100
 print(x)
 print(y)
 print(z)
-
 ```
 ## 📌2. Variable Naming Rules
 ```python
@@ -106,7 +105,6 @@ def outer():
     print(x)          # print 15
 
 outer()
-
 ```
 ## 📌4. Variable Types (Data Types)
 ```python
