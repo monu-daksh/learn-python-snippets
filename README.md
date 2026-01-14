@@ -2088,7 +2088,7 @@ os.remove("new.txt")
 # Deletes file
 
 ```
-## 📌45. OOPS Concepts (Easy Explanation)
+## 📌45. OOPS Concepts
 ```python
 # Core OOPS Concepts
 => Class
@@ -2326,11 +2326,6 @@ p1 = Point(5)
 p2 = Point(5)
 
 print(p1 == p2)   # False (different objects)
-
-
-
-
-
 ```
 
 
