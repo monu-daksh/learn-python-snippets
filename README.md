@@ -2327,5 +2327,18 @@ p2 = Point(5)
 
 print(p1 == p2)   # False (different objects)
 ```
+##  practice python mode
+
+## 📌1. Reverse String without mehtond
+```python
+
+str = "hello"
+result = ""
+
+for char in str:
+    result = char + result
+
+print(result)
+```
 
 
