@@ -32,7 +32,6 @@ x = y = z = 100
 print(x)
 print(y)
 print(z)
-
 ```
 ## 📌2. Variable Naming Rules
 ```python
@@ -106,7 +105,6 @@ def outer():
     print(x)          # print 15
 
 outer()
-
 ```
 ## 📌4. Variable Types (Data Types)
 ```python
@@ -2090,7 +2088,7 @@ os.remove("new.txt")
 # Deletes file
 
 ```
-## 📌45. OOPS Concepts (Easy Explanation)
+## 📌45. OOPS Concepts
 ```python
 # Core OOPS Concepts
 => Class
@@ -2328,11 +2326,38 @@ p1 = Point(5)
 p2 = Point(5)
 
 print(p1 == p2)   # False (different objects)
+```
+#  Practice python mode
 
+## 📌1. Reverse String without method
+```python
 
+str = "hello"
+result = ""
 
+for char in str:
+    result = char + result
 
+print(result)
+```
+## 📌2. Check String Palindrome
+```python
+str = "madam"
 
+def is_palindrom(str):
+    left = 0
+    right = len(str) -1
+    
+    while left < right:
+        if str[left] != str[right]:
+            return False
+            break
+        left +=1
+        right -=1
+    
+    return True
+
+print(is_palindrom(str))
 ```
 
 
