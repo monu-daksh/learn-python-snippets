@@ -2373,4 +2373,20 @@ def square(num):
     return num * num
 print(square(num))
 ```
+## 📌4. Count Characters in String
+```python
+str = "hello"
+
+def find_length(str):
+    # return len(str)
+    count = 0
+    
+    for char in str:
+        count += 1
+        
+    return count
+    
+print(find_length(str))
+
+```
 
