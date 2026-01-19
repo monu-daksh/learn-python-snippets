@@ -2359,5 +2359,18 @@ def is_palindrom(str):
 
 print(is_palindrom(str))
 ```
+## 📌3. Find Square of a Number
+```python
+import math
 
+num= 4
+
+def square(num):
+    # solution 1 
+    return math.pow(num, 2)
+    
+    # solution 2
+    return num * num
+print(square(num))
+```
 
