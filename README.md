@@ -2404,4 +2404,19 @@ def find_max_num(a, b):
     
 print(find_max_num(a, b))
 ```
+## 📌6. Sum of Digits
+```python
+
+digits = 1234
+# output 10
+
+def sum_of_digits(digits):
+    sum = 0
+    
+    for num in str(digits):
+        sum += int(num)
+    return sum
+
+print(sum_of_digits(digits))
+```
 
