@@ -2359,5 +2359,49 @@ def is_palindrom(str):
 
 print(is_palindrom(str))
 ```
+## 📌3. Find Square of a Number
+```python
+import math
 
+num= 4
+
+def square(num):
+    # solution 1 
+    return math.pow(num, 2)
+    
+    # solution 2
+    return num * num
+print(square(num))
+```
+## 📌4. Count Characters in String
+```python
+str = "hello"
+
+def find_length(str):
+    # return len(str)
+    count = 0
+    
+    for char in str:
+        count += 1
+        
+    return count
+    
+print(find_length(str))
+```
+## 📌5. Find Maximum of Two Numbers
+```python
+a, b = 10, 20
+
+def find_max_num(a, b):
+    # return max(a, b)
+    
+    # return a if a > b else b
+    
+    if(a > b):
+        return a
+    else:
+        return b
+    
+print(find_max_num(a, b))
+```
 
