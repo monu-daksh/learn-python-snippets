@@ -2387,6 +2387,21 @@ def find_length(str):
     return count
     
 print(find_length(str))
+```
+## 📌5. Find Maximum of Two Numbers
+```python
+a, b = 10, 20
 
+def find_max_num(a, b):
+    # return max(a, b)
+    
+    # return a if a > b else b
+    
+    if(a > b):
+        return a
+    else:
+        return b
+    
+print(find_max_num(a, b))
 ```
 
