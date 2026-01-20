@@ -2404,4 +2404,36 @@ def find_max_num(a, b):
     
 print(find_max_num(a, b))
 ```
+## 📌6. Sum of Digits
+```python
+
+digits = 1234
+# output 10
+
+def sum_of_digits(digits):
+    sum = 0
+    
+    for num in str(digits):
+        sum += int(num)
+    return sum
+
+print(sum_of_digits(digits))
+```
+## 📌7. Multiplication Table
+```python
+def print_table(num):
+    # solution 1
+    for i in range(1, 11):
+        print(f"{num} * {i} = {num * i}")
+        
+    # solution 2
+    
+    i = 1
+    
+    while i <= 10:
+        print(f"{num} * {i} = {num * i}")
+        i+=1
+    
+print(print_table(5)) 
+```
 
