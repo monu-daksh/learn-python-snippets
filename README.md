@@ -2602,7 +2602,21 @@ def check_anagram(s1, s2):
           
 print(check_anagram(s1, s2))
 ```
-## 📌16. Check Anagram
+## 📌16. Find Common Elements in Two Lists
 ```python
+list1 = [1, 2, 3, 4]
+list2 = [3, 4, 5, 6]
+
+# output [3, 4]
+def common_element(list1, list2):
+    common = []
+    
+    for num in list1:
+        if num in list2 and num not in common:
+            common.append(num)
+    
+    return common
+
+print(common_element(list1, list2))
 ```
 
