@@ -2548,6 +2548,21 @@ def find_second_largest(nums):
     return largest, second_largest
 
 print(find_second_largest(nums))
+```
+## 📌14. Count Words in Sentence
+```python
+str = "I love Python programming"
 
+def count_word(str):
+    # solution 1
+    return len(str.split())
+    
+    # solution 2
+    count = 0
+    for word in str.split():
+        count += 1
+    return count
+    
+print(count_word(str))   
 ```
 
