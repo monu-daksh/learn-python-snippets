@@ -2451,4 +2451,24 @@ def count_vowel(str):
     return count
 print(count_vowel(str))    
 ```
+## 📌9. Factorial of a Number
+```python
+num = 5
+
+def factorial(num):
+    # solution 1
+    if num == 0 or num == 1:
+        return 1
+    return num * factorial(num - 1)
+    
+    
+    # solution 2
+    fact = 1
+    while num > 0:
+        fact *= num
+        num -= 1
+        
+    return fact
+print(factorial(num))
+```
 
