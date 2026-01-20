@@ -2526,4 +2526,28 @@ def remove_duplicate(nums):
     
 print(remove_duplicate(nums))
 ```
+## 📌13. Find Second Largest Number
+```python
+
+nums = [10, 20, 30, 40]
+
+def find_second_largest(nums):
+    # solution 1
+    
+    largest = float('-inf')
+    second_largest = float('-inf')
+    
+    for num in nums:
+        if num > largest:
+            second_largest = largest
+            largest=num
+        elif num > second_largest and num != largest:
+            second_largest = num
+        
+    
+    return largest, second_largest
+
+print(find_second_largest(nums))
+
+```
 
