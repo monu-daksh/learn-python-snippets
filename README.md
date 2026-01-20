@@ -2504,6 +2504,26 @@ def fibonacci_series(n):
         print(fibonacci(i), end=" ")
 
 fibonacci_series(n)
+```
+## 📌12. Remove Duplicates from List
+```python
+nums = [1, 2, 2, 3, 4, 4, 5]
 
+def remove_duplicate(nums):
+    # solution 1
+    return list(set(nums))
+    
+    # solution 2
+    result = []
+    
+    for n in nums:
+        if n not in result:
+            result.append(n)
+    return result
+    
+    # solution 3
+    return list(dict.fromkeys(nums))
+    
+print(remove_duplicate(nums))
 ```
 
