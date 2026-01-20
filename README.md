@@ -2567,6 +2567,7 @@ print(count_word(str))
 ```
 ## 📌15. Check Anagram
 ```python
+from collections import Counter
 s1 = "listen"
 s2 = "silent"
 
@@ -2592,6 +2593,16 @@ def check_anagram(s1, s2):
             count[ch] -= 1
             
     return "Anagram"
+
+    # solution 3
+    if Counter(s1) != Counter(s2):
+          return "Not Anagram!"
+    else:
+         return "Anagram"
+          
 print(check_anagram(s1, s2))
+```
+## 📌16. Check Anagram
+```python
 ```
 
