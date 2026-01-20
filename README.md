@@ -2419,4 +2419,21 @@ def sum_of_digits(digits):
 
 print(sum_of_digits(digits))
 ```
+## 📌7. Multiplication Table
+```python
+def print_table(num):
+    # solution 1
+    for i in range(1, 11):
+        print(f"{num} * {i} = {num * i}")
+        
+    # solution 2
+    
+    i = 1
+    
+    while i <= 10:
+        print(f"{num} * {i} = {num * i}")
+        i+=1
+    
+print(print_table(5)) 
+```
 
