@@ -2565,4 +2565,33 @@ def count_word(str):
     
 print(count_word(str))   
 ```
+## 📌15. Check Anagram
+```python
+s1 = "listen"
+s2 = "silent"
+
+def check_anagram(s1, s2):
+    # solution
+    same = sorted(s1) == sorted(s2)
+    if same:
+        return "Anagram"
+    else:
+        return "Not Anagram"
+    
+    # solution 2
+    if len(s1) != len(s2):
+        return "Not Anagram"
+    else:
+        count = {}
+        for ch in s1:
+            count[ch] = count.get(ch, 0)+1
+        
+        for ch in s2:
+            if ch not in count or count[ch] == 0:
+                return "Not Anagram"
+            count[ch] -= 1
+            
+    return "Anagram"
+print(check_anagram(s1, s2))
+```
 
