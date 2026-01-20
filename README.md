@@ -2467,8 +2467,43 @@ def factorial(num):
     while num > 0:
         fact *= num
         num -= 1
-        
     return fact
+
+    # solution 3
+    import math
+    print(math.factorial(5))
 print(factorial(num))
+```
+## 📌10. Check Prime Number
+```python
+
+num = 13
+def is_prime(num):
+    if num <= 1:
+        return "Not Prime!"
+        
+    for i in range(2, num):
+        if num % i == 0:
+            return "Not Prime!"
+    
+    return "Prime Number"
+    
+print(is_prime(num))
+```
+## 📌11. Fibonacci Series
+```python
+n = 5
+
+def fibonacci(num):
+    if num <= 1:
+        return num
+    return fibonacci(num - 1) + fibonacci(num - 2)
+
+def fibonacci_series(n):
+    for i in range(n):
+        print(fibonacci(i), end=" ")
+
+fibonacci_series(n)
+
 ```
 
