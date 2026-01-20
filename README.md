@@ -2436,4 +2436,19 @@ def print_table(num):
     
 print(print_table(5)) 
 ```
+## 📌8. Count Vowels
+```python
+str = "education"
+# output = 5
+
+def count_vowel(str):
+    vowel = "aeiouAEIOU"
+    count = 0
+    
+    for v in vowel:
+        count += str.count(v)
+    
+    return count
+print(count_vowel(str))    
+```
 
