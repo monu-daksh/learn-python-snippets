@@ -2436,4 +2436,187 @@ def print_table(num):
     
 print(print_table(5)) 
 ```
+## 📌8. Count Vowels
+```python
+str = "education"
+# output = 5
+
+def count_vowel(str):
+    vowel = "aeiouAEIOU"
+    count = 0
+    
+    for v in vowel:
+        count += str.count(v)
+    
+    return count
+print(count_vowel(str))    
+```
+## 📌9. Factorial of a Number
+```python
+num = 5
+
+def factorial(num):
+    # solution 1
+    if num == 0 or num == 1:
+        return 1
+    return num * factorial(num - 1)
+    
+    
+    # solution 2
+    fact = 1
+    while num > 0:
+        fact *= num
+        num -= 1
+    return fact
+
+    # solution 3
+    import math
+    print(math.factorial(5))
+print(factorial(num))
+```
+## 📌10. Check Prime Number
+```python
+
+num = 13
+def is_prime(num):
+    if num <= 1:
+        return "Not Prime!"
+        
+    for i in range(2, num):
+        if num % i == 0:
+            return "Not Prime!"
+    
+    return "Prime Number"
+    
+print(is_prime(num))
+```
+## 📌11. Fibonacci Series
+```python
+n = 5
+
+def fibonacci(num):
+    if num <= 1:
+        return num
+    return fibonacci(num - 1) + fibonacci(num - 2)
+
+def fibonacci_series(n):
+    for i in range(n):
+        print(fibonacci(i), end=" ")
+
+fibonacci_series(n)
+```
+## 📌12. Remove Duplicates from List
+```python
+nums = [1, 2, 2, 3, 4, 4, 5]
+
+def remove_duplicate(nums):
+    # solution 1
+    return list(set(nums))
+    
+    # solution 2
+    result = []
+    
+    for n in nums:
+        if n not in result:
+            result.append(n)
+    return result
+    
+    # solution 3
+    return list(dict.fromkeys(nums))
+    
+print(remove_duplicate(nums))
+```
+## 📌13. Find Second Largest Number
+```python
+
+nums = [10, 20, 30, 40]
+
+def find_second_largest(nums):
+    # solution 1
+    
+    largest = float('-inf')
+    second_largest = float('-inf')
+    
+    for num in nums:
+        if num > largest:
+            second_largest = largest
+            largest=num
+        elif num > second_largest and num != largest:
+            second_largest = num
+        
+    
+    return largest, second_largest
+
+print(find_second_largest(nums))
+```
+## 📌14. Count Words in Sentence
+```python
+str = "I love Python programming"
+
+def count_word(str):
+    # solution 1
+    return len(str.split())
+    
+    # solution 2
+    count = 0
+    for word in str.split():
+        count += 1
+    return count
+    
+print(count_word(str))   
+```
+## 📌15. Check Anagram
+```python
+from collections import Counter
+s1 = "listen"
+s2 = "silent"
+
+def check_anagram(s1, s2):
+    # solution
+    same = sorted(s1) == sorted(s2)
+    if same:
+        return "Anagram"
+    else:
+        return "Not Anagram"
+    
+    # solution 2
+    if len(s1) != len(s2):
+        return "Not Anagram"
+    else:
+        count = {}
+        for ch in s1:
+            count[ch] = count.get(ch, 0)+1
+        
+        for ch in s2:
+            if ch not in count or count[ch] == 0:
+                return "Not Anagram"
+            count[ch] -= 1
+            
+    return "Anagram"
+
+    # solution 3
+    if Counter(s1) != Counter(s2):
+          return "Not Anagram!"
+    else:
+         return "Anagram"
+          
+print(check_anagram(s1, s2))
+```
+## 📌16. Find Common Elements in Two Lists
+```python
+list1 = [1, 2, 3, 4]
+list2 = [3, 4, 5, 6]
+
+# output [3, 4]
+def common_element(list1, list2):
+    common = []
+    
+    for num in list1:
+        if num in list2 and num not in common:
+            common.append(num)
+    
+    return common
+
+print(common_element(list1, list2))
+```
 
