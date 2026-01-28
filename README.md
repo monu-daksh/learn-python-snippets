@@ -2632,7 +2632,23 @@ max_val = max(list)
 normalized = [(x - min) / (min - max) for x in list]
 print(normalized)​
 ```
-## 📌18. Normalize a list
+## 📌18. Remove missing values
 ```python
+
+list = [1, None, 2, None, 3]
+
+cleaned = [x for x in list if x is not None]
+
+
+def cleaned(lst):
+    result = []
+
+    for x in lst:
+        if x is not None:
+            result.append(x)
+
+    return result
+
+print(cleaned(lst))
 ```
 
