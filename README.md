@@ -2619,4 +2619,20 @@ def common_element(list1, list2):
 
 print(common_element(list1, list2))
 ```
+## 📌17. Normalize a list
+```python
+# formula
+normalized = x - min / min - max
+
+list = [10, 20, 30]
+
+min_val = min(list)
+max_val = max(list)
+
+normalized = [(x - min) / (min - max) for x in list]
+print(normalized)​
+```
+## 📌18. Normalize a list
+```python
+```
 
