@@ -2790,4 +2790,24 @@ def scale_dict(dict):
     return scaled
 print(scale_dict(dict))
 ```
+## 📌27. Replace outliers (>100)
+```python
+list = [10, 150, 20]
+# Output: [10, 100, 20]
+
+def replace_outliers(list):
+    # solution 1
+    return [100 if x > 100 else x for x in list]
+    
+    # solution 2
+    result = []
+    
+    for x in list:
+        if x > 100:
+            result.append(100)
+        else:
+            result.append(x)
+    return result
+print(replace_outliers(list))
+```
 
