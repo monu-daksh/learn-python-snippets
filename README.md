@@ -2846,4 +2846,21 @@ def generate_n_grams(words, n):
     
 print(generate_n_grams(words, n))  
 ```
+## 📌30. Batch data
+```python
+
+data = [1, 2, 3, 4]
+size = 2
+# Output: [[1, 2], [3, 4]]
+
+def batch_data(data, size):
+    batches = []
+    
+    for i in range(0, len(data), size):
+        batch = data[i:i+size]
+        batches.append(batch)
+    return batches
+    
+print(batch_data(data, size))
+```
 
