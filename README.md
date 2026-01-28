@@ -2878,7 +2878,26 @@ def generate_sliding_windows(data, window):
     return windows
         
 print(generate_sliding_windows(data, window))
+
+```
+## 📌32. Log transform
+```python
+import math   
+data =  [1, 10, 100]
+# Output: [0, 1, 2]
+
+def log_transform(data):
+    # solution 1
+    logs_data = [] 
+    for x in data:
+        value = math.log10(x)
+        logs_data.append(int(value))
+        
+    return logs_data
     
+    # solution 2
+    return [int(math.log10(x)) for x in data]
+print(log_transform(data))
 
 ```
 
