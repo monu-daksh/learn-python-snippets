@@ -2651,4 +2651,23 @@ def cleaned(lst):
 
 print(cleaned(lst))
 ```
+## 📌19. Encode labels
+```python
+
+labels = ["cat", "dog", "cat"]
+# {"cat":0, "dog":1}
+
+def unique_labels(labels):
+    encoded = {}
+    count = 0
+    
+    for label in labels:
+        if label not in encoded:
+            encoded[label] = count
+            count = count + 1
+    return encoded
+
+print(unique_labels(labels))
+    
+```
 
