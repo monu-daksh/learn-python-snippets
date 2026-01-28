@@ -2705,4 +2705,33 @@ def tokenize(text):
     return text.lower().split()
 print(tokenize(text))
 ```
+## 📌22. Remove stopwords
+```python
+# Solution 1
+words = ["this", "is", "ai"]
+stopwords = {"is"} 
+# output ['this', 'ai']
+
+def filtered(words, stopwords):
+    return [word for word in words if word not in stopwords]
+    
+print(filtered(words, stopwords))
+
+# Solution 2
+
+words = ["this", "is", "ai"]
+stopwords = ["is"]
+ # ['this', 'ai']
+ 
+def filterWord(words, stopwords):
+    filtered = []
+     
+    for word in words:
+        if word not in stopwords:
+            filtered.append(word)
+
+    return filtered
+     
+print(filterWord(words, stopwords))
+```
 
