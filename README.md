@@ -2749,4 +2749,15 @@ def frequency_count(text):
 
 print(frequency_count(text))
 ```
+## 📌24. Padding sequences
+```python
+list = [1, 2, 3]
+max_len =  5
+# Output:   [1, 2, 3, 0, 0]
+
+def padding_sequences(seq, pad):
+    return seq + [0] * (pad - len(seq))
+
+print(padding_sequences(list, max_len))
+```
 
