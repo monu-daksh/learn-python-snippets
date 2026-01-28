@@ -2760,4 +2760,14 @@ def padding_sequences(seq, pad):
 
 print(padding_sequences(list, max_len))
 ```
+## 📌25. Padding sequences
+```python
+seq = [1, 2, 3, 4, 5]
+max_len = 3
+
+def truncate_sequence(seq, max_len):
+    return seq[:max_len]
+    
+print(truncate_sequence(seq, max_len))
+```
 
