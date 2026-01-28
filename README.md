@@ -2810,4 +2810,22 @@ def replace_outliers(list):
     return result
 print(replace_outliers(list))
 ```
+## 📌28. Moving average
+```python
+data = [1, 2, 3, 4]     
+window = 2  
+
+# Output: [1.5, 2.5, 3.5]
+
+def moving_average(data, window):
+    result = []
+    for i in range(len(data) - window + 1):
+        current_window = data[i: i+ window]
+        avg = sum(current_window) / window
+        result.append(avg)
+        
+    return result
+print(moving_average(data, window))
+    
+```
 
