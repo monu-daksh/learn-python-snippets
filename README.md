@@ -2734,4 +2734,19 @@ def filterWord(words, stopwords):
      
 print(filterWord(words, stopwords))
 ```
+## 📌23. Count word frequency
+```python
+text = "ml ml ai ai ai"
+
+def frequency_count(text):
+    freq = {}
+    words = text.split()
+    
+    for word in words:
+        freq[word] = freq.get(word, 0) +1
+    
+    return freq
+
+print(frequency_count(text))
+```
 
