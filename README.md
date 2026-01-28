@@ -2826,6 +2826,24 @@ def moving_average(data, window):
         
     return result
 print(moving_average(data, window))
+```
+## 📌29. Generate n-grams
+```python
+words =["deep","learning","is","fun"]
+n = 2
+# Output: [("deep","learning"),
+#          ("learning","is"),
+#          ("is","fun")]
+
+def generate_n_grams(words, n):
+    ngrams = []  
     
+    for i in range(len(words) - n +1):
+        ngrm = tuple(words[i: i+n])
+        ngrams.append(ngrm)
+    
+    return ngrams
+    
+print(generate_n_grams(words, n))  
 ```
 
