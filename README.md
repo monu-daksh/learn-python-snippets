@@ -2670,4 +2670,30 @@ def unique_labels(labels):
 print(unique_labels(labels))
     
 ```
+## 📌20. Encode labels
+```python
+# Solution 1
+labels = ["spam", "ham", "spam"]
+mapping  = {"ham":0, "spam":1}
+
+def encoded(labels):
+    result = []
+    
+    for label in labels:
+        result.append(mapping[label])
+    
+    return result
+print(encoded(labels))
+
+# Solution 2
+
+def encoded(labels):
+    unique_labels = list(dict.fromkeys(labels))
+    
+    mapping = {label: i for i, label in enumerate(unique_labels)}
+    
+    encoded = [mapping[label] for label in labels]
+    return encoded
+print(encoded(labels))
+```
 
