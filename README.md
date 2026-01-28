@@ -2696,4 +2696,13 @@ def encoded(labels):
     return encoded
 print(encoded(labels))
 ```
+## 📌21. Tokenize text
+```python
+text = "AI will change the world"
+# ['ai', 'will', 'change', 'the', 'world']
+
+def tokenize(text):
+    return text.lower().split()
+print(tokenize(text))
+```
 
