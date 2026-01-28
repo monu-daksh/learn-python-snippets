@@ -2770,4 +2770,24 @@ def truncate_sequence(seq, max_len):
     
 print(truncate_sequence(seq, max_len))
 ```
+## 📌26. Min–max scale dictionary values
+```python
+dict =  {"a": 10, "b": 20}
+# Output: {"a": 0.0, "b": 1.0}
+
+def scale_dict(dict):
+    values = dict.values()
+    
+    min_val = min(values)
+    max_val = max(values)
+    
+    scaled = {}
+    
+    for key, value in dict.items():
+        scaled_value = (value - min_val) / (max_val - min_val)
+        scaled[key] = scaled_value
+    
+    return scaled
+print(scale_dict(dict))
+```
 
