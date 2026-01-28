@@ -2863,4 +2863,22 @@ def batch_data(data, size):
     
 print(batch_data(data, size))
 ```
+## 📌31. Generate sliding windows
+```python
+data = [1, 2, 3, 4]
+window = 3
+# Output: [[1, 2, 3], [2, 3, 4]]
+
+def generate_sliding_windows(data, window):
+    windows = []  
+    
+    for i in range(len(data) - window +1):
+           current_window = data[i:i+window]
+           windows.append(current_window)
+    return windows
+        
+print(generate_sliding_windows(data, window))
+    
+
+```
 
