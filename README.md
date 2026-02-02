@@ -10,7 +10,6 @@ If you are a beginner and want a **Python cheatsheet** or **ready-to-use example
 - Mini Projects: Calculator, To-do App, Games
 
 ---
-
 ## 📌1. Variables in Python (Data Holders)
 ```python
 => How to Write Variables
