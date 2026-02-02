@@ -191,7 +191,6 @@ int("abc")  # ValueError
 
 ## 📌7. Variable Reassignment
 ```python
-
 x = 10
 x = x + 5
 print(x)  # 15
@@ -255,7 +254,6 @@ if x is None:
 ## 📌10. Variable Unpacking
 ```python
 a, b = (10, 20)
-
 print(a, b)
 
 
@@ -345,7 +343,6 @@ print(s)  # Hello
 ```
 ## 📌18. String Indexing
 ```python
-
 => Positive Index
 
 s = "python"
@@ -365,7 +362,6 @@ Negative:-6  -5  -4  -3  -2  -1
 ```
 ## 📌19. String Slicing
 ```python
-
 s = "Python"
 s[start : end : step]
 
