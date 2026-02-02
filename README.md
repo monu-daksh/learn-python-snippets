@@ -35,14 +35,12 @@ print(z)
 ## 📌2. Variable Naming Rules
 ```python
 ✅ Allowed:
-
 user_name = "Monu"
 _age = 26
 totalAmount = 500
 
 
 ❌ Not Allowed:
-
 1name = "Monu"   # cannot start with number
 user-name = "x"  # hyphen not allowed
 class = 10       # reserved keyword
@@ -56,7 +54,6 @@ UPPER_CASE = "constant"
 ```
 ## 📌3. Types of Variables (Based on Scope)
 ```python
-
 🔹 Local Variable
 Declared inside a function.
 
