@@ -10,7 +10,6 @@ If you are a beginner and want a **Python cheatsheet** or **ready-to-use example
 - Mini Projects: Calculator, To-do App, Games
 
 ---
-
 ## 📌1. Variables in Python (Data Holders)
 ```python
 => How to Write Variables
@@ -36,14 +35,12 @@ print(z)
 ## 📌2. Variable Naming Rules
 ```python
 ✅ Allowed:
-
 user_name = "Monu"
 _age = 26
 totalAmount = 500
 
 
 ❌ Not Allowed:
-
 1name = "Monu"   # cannot start with number
 user-name = "x"  # hyphen not allowed
 class = 10       # reserved keyword
@@ -57,7 +54,6 @@ UPPER_CASE = "constant"
 ```
 ## 📌3. Types of Variables (Based on Scope)
 ```python
-
 🔹 Local Variable
 Declared inside a function.
 
@@ -195,7 +191,6 @@ int("abc")  # ValueError
 
 ## 📌7. Variable Reassignment
 ```python
-
 x = 10
 x = x + 5
 print(x)  # 15
@@ -259,7 +254,6 @@ if x is None:
 ## 📌10. Variable Unpacking
 ```python
 a, b = (10, 20)
-
 print(a, b)
 
 
@@ -349,7 +343,6 @@ print(s)  # Hello
 ```
 ## 📌18. String Indexing
 ```python
-
 => Positive Index
 
 s = "python"
@@ -369,7 +362,6 @@ Negative:-6  -5  -4  -3  -2  -1
 ```
 ## 📌19. String Slicing
 ```python
-
 s = "Python"
 s[start : end : step]
 
@@ -2618,5 +2610,286 @@ def common_element(list1, list2):
     return common
 
 print(common_element(list1, list2))
+```
+## 📌17. Normalize a list
+```python
+# formula
+normalized = x - min / min - max
+
+list = [10, 20, 30]
+
+min_val = min(list)
+max_val = max(list)
+
+normalized = [(x - min) / (min - max) for x in list]
+print(normalized)​
+```
+## 📌18. Remove missing values
+```python
+
+list = [1, None, 2, None, 3]
+
+cleaned = [x for x in list if x is not None]
+
+
+def cleaned(lst):
+    result = []
+
+    for x in lst:
+        if x is not None:
+            result.append(x)
+
+    return result
+
+print(cleaned(lst))
+```
+## 📌19. Encode labels
+```python
+
+labels = ["cat", "dog", "cat"]
+# {"cat":0, "dog":1}
+
+def unique_labels(labels):
+    encoded = {}
+    count = 0
+    
+    for label in labels:
+        if label not in encoded:
+            encoded[label] = count
+            count = count + 1
+    return encoded
+
+print(unique_labels(labels))
+    
+```
+## 📌20. Encode labels
+```python
+# Solution 1
+labels = ["spam", "ham", "spam"]
+mapping  = {"ham":0, "spam":1}
+
+def encoded(labels):
+    result = []
+    
+    for label in labels:
+        result.append(mapping[label])
+    
+    return result
+print(encoded(labels))
+
+# Solution 2
+
+def encoded(labels):
+    unique_labels = list(dict.fromkeys(labels))
+    
+    mapping = {label: i for i, label in enumerate(unique_labels)}
+    
+    encoded = [mapping[label] for label in labels]
+    return encoded
+print(encoded(labels))
+```
+## 📌21. Tokenize text
+```python
+text = "AI will change the world"
+# ['ai', 'will', 'change', 'the', 'world']
+
+def tokenize(text):
+    return text.lower().split()
+print(tokenize(text))
+```
+## 📌22. Remove stopwords
+```python
+# Solution 1
+words = ["this", "is", "ai"]
+stopwords = {"is"} 
+# output ['this', 'ai']
+
+def filtered(words, stopwords):
+    return [word for word in words if word not in stopwords]
+    
+print(filtered(words, stopwords))
+
+# Solution 2
+
+words = ["this", "is", "ai"]
+stopwords = ["is"]
+ # ['this', 'ai']
+ 
+def filterWord(words, stopwords):
+    filtered = []
+     
+    for word in words:
+        if word not in stopwords:
+            filtered.append(word)
+
+    return filtered
+     
+print(filterWord(words, stopwords))
+```
+## 📌23. Count word frequency
+```python
+text = "ml ml ai ai ai"
+
+def frequency_count(text):
+    freq = {}
+    words = text.split()
+    
+    for word in words:
+        freq[word] = freq.get(word, 0) +1
+    
+    return freq
+
+print(frequency_count(text))
+```
+## 📌24. Padding sequences
+```python
+list = [1, 2, 3]
+max_len =  5
+# Output:   [1, 2, 3, 0, 0]
+
+def padding_sequences(seq, pad):
+    return seq + [0] * (pad - len(seq))
+
+print(padding_sequences(list, max_len))
+```
+## 📌25. Padding sequences
+```python
+seq = [1, 2, 3, 4, 5]
+max_len = 3
+
+def truncate_sequence(seq, max_len):
+    return seq[:max_len]
+    
+print(truncate_sequence(seq, max_len))
+```
+## 📌26. Min–max scale dictionary values
+```python
+dict =  {"a": 10, "b": 20}
+# Output: {"a": 0.0, "b": 1.0}
+
+def scale_dict(dict):
+    values = dict.values()
+    
+    min_val = min(values)
+    max_val = max(values)
+    
+    scaled = {}
+    
+    for key, value in dict.items():
+        scaled_value = (value - min_val) / (max_val - min_val)
+        scaled[key] = scaled_value
+    
+    return scaled
+print(scale_dict(dict))
+```
+## 📌27. Replace outliers (>100)
+```python
+list = [10, 150, 20]
+# Output: [10, 100, 20]
+
+def replace_outliers(list):
+    # solution 1
+    return [100 if x > 100 else x for x in list]
+    
+    # solution 2
+    result = []
+    
+    for x in list:
+        if x > 100:
+            result.append(100)
+        else:
+            result.append(x)
+    return result
+print(replace_outliers(list))
+```
+## 📌28. Moving average
+```python
+data = [1, 2, 3, 4]     
+window = 2  
+
+# Output: [1.5, 2.5, 3.5]
+
+def moving_average(data, window):
+    result = []
+    for i in range(len(data) - window + 1):
+        current_window = data[i: i+ window]
+        avg = sum(current_window) / window
+        result.append(avg)
+        
+    return result
+print(moving_average(data, window))
+```
+## 📌29. Generate n-grams
+```python
+words =["deep","learning","is","fun"]
+n = 2
+# Output: [("deep","learning"),
+#          ("learning","is"),
+#          ("is","fun")]
+
+def generate_n_grams(words, n):
+    ngrams = []  
+    
+    for i in range(len(words) - n +1):
+        ngrm = tuple(words[i: i+n])
+        ngrams.append(ngrm)
+    
+    return ngrams
+    
+print(generate_n_grams(words, n))  
+```
+## 📌30. Batch data
+```python
+
+data = [1, 2, 3, 4]
+size = 2
+# Output: [[1, 2], [3, 4]]
+
+def batch_data(data, size):
+    batches = []
+    
+    for i in range(0, len(data), size):
+        batch = data[i:i+size]
+        batches.append(batch)
+    return batches
+    
+print(batch_data(data, size))
+```
+## 📌31. Generate sliding windows
+```python
+data = [1, 2, 3, 4]
+window = 3
+# Output: [[1, 2, 3], [2, 3, 4]]
+
+def generate_sliding_windows(data, window):
+    windows = []  
+    
+    for i in range(len(data) - window +1):
+           current_window = data[i:i+window]
+           windows.append(current_window)
+    return windows
+        
+print(generate_sliding_windows(data, window))
+
+```
+## 📌32. Log transform
+```python
+import math   
+data =  [1, 10, 100]
+# Output: [0, 1, 2]
+
+def log_transform(data):
+    # solution 1
+    logs_data = [] 
+    for x in data:
+        value = math.log10(x)
+        logs_data.append(int(value))
+        
+    return logs_data
+    
+    # solution 2
+    return [int(math.log10(x)) for x in data]
+print(log_transform(data))
+
 ```
 
