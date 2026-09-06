@@ -2520,7 +2520,7 @@ print(remove_duplicate(nums))
 ```
 ## 📌13. Find Second Largest Number
 ```python
-
+solution: 1
 nums = [10, 20, 30, 40]
 
 def find_second_largest(nums):
@@ -2540,6 +2540,15 @@ def find_second_largest(nums):
     return largest, second_largest
 
 print(find_second_largest(nums))
+
+solution: 2
+
+def find_max_second(nums):
+  largest = max(nums)
+  nums.remove(largest)
+  print(max(nums))
+print(find_max_second(nums))
+
 ```
 ## 📌14. Count Words in Sentence
 ```python
