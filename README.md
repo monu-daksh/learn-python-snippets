@@ -2890,6 +2890,5 @@ def log_transform(data):
     # solution 2
     return [int(math.log10(x)) for x in data]
 print(log_transform(data))
-
 ```
 
